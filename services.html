@@ -160,6 +160,7 @@ p{margin:0}
 /* ---------- closed deals (placeholders) ---------- */
 .deals{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
 .deals__head{margin-bottom:26px}
+#transactions .deals{margin-top:0;padding-top:0;border-top:0}
 .deals__head h3{font-size:22px;color:var(--navy-800)}
 .cards--deals{grid-template-columns:repeat(4,1fr)}
 .card--placeholder{border-style:dashed;background:#fafbfc}
@@ -405,6 +406,7 @@ section[id]{scroll-margin-top:76px}
     <nav class="nav" id="nav" aria-label="Main">
       <a href='/'>Home</a>
       <a href="#transactions">Transactions</a>
+      <a href="#financing">Financing</a>
       <a href="#eligible">Eligible Items</a>
       <a href="#property-types">Property Types</a>
       <a href="#who-we-serve">Who We Serve</a>
@@ -427,6 +429,7 @@ section[id]{scroll-margin-top:76px}
     <p class="hero__lede">From ground-up builds to retroactive takeouts, C&#8209;PACE Solutions places each transaction with the right capital provider. Here is what we handle, on which assets, and for whom.</p>
     <div class="jump">
       <a href="#transactions">Transactions</a>
+      <a href="#financing">Financing</a>
       <a href="#property-types">Property Types</a>
       <a href="#who-we-serve">Who We Serve</a>
       <a href="#about">About</a>
@@ -437,59 +440,9 @@ section[id]{scroll-margin-top:76px}
 <!-- ================= TRANSACTIONS ================= -->
 <section class="section" id="transactions">
   <div class="wrap">
-    <div class="section__head">
-      <span class="eyebrow">Transactions</span>
-      <h2>Six ways C&#8209;PACE fits into a deal</h2>
-      <p>The structure changes with the project. The goal does not: the lowest-cost, longest-dated capital available for the eligible scope.</p>
-    </div>
-
-    <div class="cards">
-      <article class="card">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div>
-        <h3>New Construction</h3>
-        <p>Fund the energy, water and resiliency scope of a ground-up build. C&#8209;PACE takes a slot in the stack that would otherwise need equity, so the deal needs less cash to close.</p>
-        <p class="card__best"><b>Best when</b> The project is in design or early construction and the equity check is the constraint.</p>
-      </article>
-
-      <article class="card">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5.4 5.4l-5 5a2.1 2.1 0 003 3l5-5a4 4 0 005.4-5.4l-2.6 2.6-2.1-2.1 2.7-2.6z"/></svg></div>
-        <h3>Renovations &amp; Retrofits</h3>
-        <p>HVAC, building envelope, lighting, water systems, roofing, elevators and seismic work on an asset you already own.</p>
-        <p class="card__best"><b>Best when</b> Core building systems are aging out and the capital plan is stretched.</p>
-      </article>
-
-      <article class="card">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 019-7 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-7.5-4M3 4v6h6"/></svg></div>
-        <h3>Retroactive C&#8209;PACE</h3>
-        <p>Recover capital from eligible improvements already completed. Each program sets its own lookback window, so timing matters.</p>
-        <p class="card__best"><b>Best when</b> A recent project was funded with equity or short-term debt.</p>
-      </article>
-
-      <article class="card">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5s2.2 2.9 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg></div>
-        <h3>Recapitalization</h3>
-        <p>Replace short-term, floating or higher-cost debt with long-dated, fixed-rate capital. Restore debt service coverage and extend the runway.</p>
-        <p class="card__best"><b>Best when</b> A loan is maturing, or mezzanine or preferred equity is costing more than the asset can carry.</p>
-      </article>
-
-      <article class="card">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13"/><path d="M9.5 13.5l2 2 3.5-3.5"/></svg></div>
-        <h3>Building Repositioning</h3>
-        <p>Change what a building is. Office-to-residential conversion, tenant reconfiguration, or a full systems replacement that resets the asset for its next life.</p>
-        <p class="card__best"><b>Best when</b> A change of use or major scope makes the business plan depend on low-cost capital.</p>
-      </article>
-
-      <article class="card">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16h20M4 16v-5M20 16v-5M2 12c4.5 0 6-4 10-4s5.5 4 10 4M8.5 16v-3M15.5 16v-3"/></svg></div>
-        <h3>Bridge Financing</h3>
-        <p>Fill a timing gap in the stack while the project stabilizes or a permanent takeout comes together.</p>
-        <p class="card__best"><b>Best when</b> The takeout is lined up but the closing date is not.</p>
-      </article>
-    </div>
-
     <div class="deals" id="featured-deals">
       <div class="deals__head">
-        <span class="eyebrow">Track Record</span>
+        <span class="eyebrow">Transactions</span>
         <h3>Deals We&rsquo;ve Originated</h3>
         <p class="deals__lede">A selection of recent C&#8209;PACE transactions across industrial, hospitality, retail and office.</p>
       </div>
@@ -592,6 +545,61 @@ section[id]{scroll-margin-top:76px}
           </div>
         </article>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINANCING ================= -->
+<section class="section" id="financing">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow">Financing</span>
+      <h2>Six ways C&#8209;PACE fits into a deal</h2>
+      <p>The structure changes with the project. The goal does not: the lowest-cost, longest-dated capital available for the eligible scope.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div>
+        <h3>New Construction</h3>
+        <p>Fund the energy, water and resiliency scope of a ground-up build. C&#8209;PACE takes a slot in the stack that would otherwise need equity, so the deal needs less cash to close.</p>
+        <p class="card__best"><b>Best when</b> The project is in design or early construction and the equity check is the constraint.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5.4 5.4l-5 5a2.1 2.1 0 003 3l5-5a4 4 0 005.4-5.4l-2.6 2.6-2.1-2.1 2.7-2.6z"/></svg></div>
+        <h3>Renovations &amp; Retrofits</h3>
+        <p>HVAC, building envelope, lighting, water systems, roofing, elevators and seismic work on an asset you already own.</p>
+        <p class="card__best"><b>Best when</b> Core building systems are aging out and the capital plan is stretched.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 019-7 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-7.5-4M3 4v6h6"/></svg></div>
+        <h3>Retroactive C&#8209;PACE</h3>
+        <p>Recover capital from eligible improvements already completed. Each program sets its own lookback window, so timing matters.</p>
+        <p class="card__best"><b>Best when</b> A recent project was funded with equity or short-term debt.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5s2.2 2.9 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg></div>
+        <h3>Recapitalization</h3>
+        <p>Replace short-term, floating or higher-cost debt with long-dated, fixed-rate capital. Restore debt service coverage and extend the runway.</p>
+        <p class="card__best"><b>Best when</b> A loan is maturing, or mezzanine or preferred equity is costing more than the asset can carry.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13"/><path d="M9.5 13.5l2 2 3.5-3.5"/></svg></div>
+        <h3>Building Repositioning</h3>
+        <p>Change what a building is. Office-to-residential conversion, tenant reconfiguration, or a full systems replacement that resets the asset for its next life.</p>
+        <p class="card__best"><b>Best when</b> A change of use or major scope makes the business plan depend on low-cost capital.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16h20M4 16v-5M20 16v-5M2 12c4.5 0 6-4 10-4s5.5 4 10 4M8.5 16v-3M15.5 16v-3"/></svg></div>
+        <h3>Bridge Financing</h3>
+        <p>Fill a timing gap in the stack while the project stabilizes or a permanent takeout comes together.</p>
+        <p class="card__best"><b>Best when</b> The takeout is lined up but the closing date is not.</p>
+      </article>
     </div>
 
     <p class="fine">Proceeds, pricing and term vary by state program, asset and scope of work. Eligibility is confirmed before anything is placed.</p>
@@ -725,8 +733,6 @@ section[id]{scroll-margin-top:76px}
       <span class="eyebrow eyebrow--light">About</span>
       <h2>Nicole Robben<small>Principal, C&#8209;PACE Solutions, LLC</small></h2>
       <p class="about__lede">C&#8209;PACE Solutions finds commercial property owners the best C&#8209;PACE lender at the best pricing for their specific deal, at no cost to them.</p>
-      <p class="about__tbd">Background, experience and track record: <em>bio coming soon.</em></p>
-
       <div class="principles">
         <div><h3>No cost to you</h3><p>Finding and negotiating your financing costs the property owner nothing.</p></div>
         <div><h3>Full lender market</h3><p>We know the capital providers active in every program and shop your project across them.</p></div>
@@ -756,6 +762,7 @@ section[id]{scroll-margin-top:76px}
         <h3>Navigate</h3>
         <ul>
           <li><a href="#transactions">Transactions</a></li>
+          <li><a href="#financing">Financing</a></li>
           <li><a href="#property-types">Property Types</a></li>
           <li><a href="#who-we-serve">Who We Serve</a></li>
           <li><a href="#about">About</a></li>
