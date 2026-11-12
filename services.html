@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Transactions, Property Types and Who We Serve | C-PACE Solutions</title>
+<meta name="description" content="The C-PACE transactions we place, the property types we finance, who we serve, and who you will work with.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   C-PACE Solutions — landing page
+   All type is Inter. Colors are tokens; change them here only.
+   ============================================================ */
+:root{
+  --navy-900:#01202e;
+  --navy-800:#023a51;
+  --navy-700:#0a4e69;
+  --green:#aedc3c;        /* bright accent — fills and buttons, not body text */
+  --green-hi:#c0ea52;
+  --green-deep:#557d19;   /* dark enough for text on white */
+  --green-soft:#f2f8e3;
+  --slate:#5a6a78;
+  --ink:#0d1b24;
+  --mist:#eef3f6;
+  --line:#dde5ea;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(1,32,46,.06),0 2px 8px rgba(1,32,46,.05);
+  --shadow-md:0 4px 12px rgba(1,32,46,.08),0 12px 32px rgba(1,32,46,.08);
+  --shadow-lg:0 20px 60px rgba(1,32,46,.18);
+  --wrap:1140px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:#fff;color:var(--ink);
+  font:400 17px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-weight:700;line-height:1.18;letter-spacing:-.022em;margin:0}
+p{margin:0}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--green-deep);margin-bottom:14px;display:block;
+}
+.eyebrow--light{color:var(--green)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 26px;border:1px solid transparent;border-radius:var(--radius);
+  font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;
+  transition:background .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease),transform .2s var(--ease);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn--primary{background:var(--green);color:var(--navy-900);box-shadow:0 4px 14px rgba(174,220,60,.38)}
+.btn--primary:hover{background:var(--green-hi);box-shadow:0 8px 22px rgba(174,220,60,.5)}
+.btn--dark{background:var(--navy-800);color:#fff}
+.btn--dark:hover{background:var(--navy-700)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn--ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn--lg{min-height:56px;padding:0 32px;font-size:16px}
+
+/* ---------- header ---------- */
+.header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .25s var(--ease)}
+.header.is-stuck{box-shadow:var(--shadow-sm)}
+.header__bar{display:flex;align-items:center;gap:24px;height:76px}
+
+/* LOGO PLACEHOLDER — see README */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
+.logo__mark{
+  width:52px;height:52px;flex:0 0 auto;display:grid;place-items:center;
+  border:2px dashed var(--line);border-radius:8px;background:var(--mist);
+  font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--slate);
+}
+.logo__text{display:flex;flex-direction:column;line-height:1.1}
+.logo__name{font-size:18px;font-weight:700;color:var(--navy-800);letter-spacing:-.018em}
+.logo__sub{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-top:4px}
+
+.nav{margin-left:auto;display:flex;align-items:center;gap:2px}
+.nav a{
+  display:inline-flex;align-items:center;height:44px;padding:0 14px;border-radius:8px;
+  font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;
+  transition:background .18s var(--ease),color .18s var(--ease);
+}
+.nav a:hover{background:var(--mist);color:var(--navy-800)}
+.nav .btn{margin-left:12px;color:var(--navy-900)}
+.nav .btn:hover{background:var(--green-hi);color:var(--navy-900)}
+
+.burger{display:none;margin-left:auto;width:48px;height:48px;align-items:center;justify-content:center;background:none;border:1px solid var(--line);border-radius:9px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--navy-800);position:relative;transition:.22s var(--ease)}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--navy-800);transition:.22s var(--ease)}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.burger.is-open span{background:transparent}
+.burger.is-open span::before{top:0;transform:rotate(45deg)}
+.burger.is-open span::after{top:0;transform:rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--navy-900);color:#fff;overflow:hidden;isolation:isolate}
+.hero__media{position:absolute;inset:0;z-index:-2}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(103deg,rgba(1,32,46,.96) 0%,rgba(2,58,81,.92) 50%,rgba(10,78,105,.76) 100%)}
+.hero__inner{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding:104px 24px 92px}
+.hero h1{font-size:40px;color:#fff;margin-bottom:18px;font-weight:800}
+.hero h1 span{display:block;color:var(--green)}
+.hero__attrs{
+  display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:26px;
+  font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);
+}
+.hero__attrs span::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:rgba(174,220,60,.6);margin-left:18px;vertical-align:middle}
+.hero__attrs span:last-child::after{display:none}
+.hero__lede{font-size:19px;line-height:1.62;color:#cfe0e9;max-width:54ch;margin-bottom:32px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+
+/* illustrative structure card */
+.card-illus{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.17);border-radius:var(--radius-lg);padding:28px;backdrop-filter:blur(10px);box-shadow:var(--shadow-lg)}
+.card-illus__head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.card-illus__head h2{font-size:18px;color:#fff}
+.card-illus__tag{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--navy-900);background:var(--green);padding:6px 10px;border-radius:99px;white-space:nowrap}
+.card-illus dl{margin:0}
+.card-illus dl div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+.card-illus dl div:last-child{border-bottom:0}
+.card-illus dt{font-size:14.5px;font-weight:500;color:#a8c2ce;margin:0}
+.card-illus dd{font-size:16px;font-weight:700;color:#fff;margin:0;font-variant-numeric:tabular-nums}
+.card-illus__foot{margin-top:14px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;line-height:1.5;color:#8fa9b6}
+
+/* ---------- sections ---------- */
+.section{padding:96px 0}
+.section--mist{background:var(--mist)}
+.section--navy{background:var(--navy-900);color:#fff;position:relative;isolation:isolate}
+.section__bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.section__bg img{width:100%;height:100%;object-fit:cover}
+.section__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(1,32,46,.97) 0%,rgba(1,32,46,.93) 52%,rgba(2,58,81,.84) 100%)}
+.section__head{max-width:680px;margin-bottom:48px}
+.section__head--center{margin-left:auto;margin-right:auto;text-align:center}
+.section__head h2{font-size:clamp(29px,3.4vw,40px);margin-bottom:16px}
+.section--navy .section__head h2{color:#fff}
+.section__head p{font-size:18px;color:var(--slate);line-height:1.65}
+.section--navy .section__head p{color:#bdd3de}
+
+/* ---------- financing cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px;transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.card:hover{border-color:var(--green);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.card__icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:var(--green-soft);color:var(--green-deep);margin-bottom:18px}
+.card__icon svg{width:24px;height:24px}
+.card h3{font-size:19px;margin-bottom:10px;color:var(--navy-800)}
+.card p{font-size:15.5px;line-height:1.6;color:var(--slate)}
+
+/* asset-type chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px;padding-top:36px;border-top:1px solid var(--line);align-items:center}
+.chips__label{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-right:8px}
+.chip{padding:9px 16px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:14.5px;font-weight:500;color:var(--navy-800)}
+
+/* ---------- closed deals (placeholders) ---------- */
+.deals{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
+.deals__head{margin-bottom:26px}
+.deals__head h3{font-size:22px;color:var(--navy-800)}
+.cards--deals{grid-template-columns:repeat(4,1fr)}
+.card--placeholder{border-style:dashed;background:#fafbfc}
+.card--placeholder:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.card__tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--slate);background:var(--green-soft);padding:4px 10px;border-radius:99px;margin-bottom:14px}
+.card--placeholder p{color:var(--slate);font-style:italic}
+
+/* ---------- how it works ---------- */
+.howgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.howfig{margin:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.howfig img{width:100%;height:auto}
+.howgrid .section__head{margin-bottom:30px}
+.steplist{list-style:none;counter-reset:step;padding:0;margin:0}
+.steplist li{position:relative;padding:0 0 24px 60px;counter-increment:step}
+.steplist li::before{
+  content:counter(step,decimal-leading-zero);position:absolute;left:0;top:-2px;
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  background:var(--green-soft);color:var(--green-deep);font-size:13px;font-weight:700;
+}
+.steplist li::after{content:"";position:absolute;left:21px;top:46px;bottom:4px;width:1px;background:var(--line)}
+.steplist li:last-child{padding-bottom:0}
+.steplist li:last-child::after{display:none}
+.steplist h3{font-size:18.5px;margin-bottom:7px;color:var(--navy-800)}
+.steplist p{font-size:15.5px;line-height:1.6;color:var(--slate)}
+
+/* ---------- benefits ---------- */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px}
+.benefit svg{width:22px;height:22px;color:var(--green);margin-bottom:12px}
+.benefit h3{font-size:16.5px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:-.01em}
+.benefit p{font-size:14.5px;line-height:1.55;color:#a8c2ce}
+
+/* ---------- static state map ---------- */
+.maplegend{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;margin-bottom:30px}
+.maplegend span{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;color:var(--slate)}
+.sw{width:15px;height:15px;border-radius:4px;flex:0 0 auto}
+.sw--active{background:var(--green)}
+.sw--dev{background:var(--navy-700)}
+.sw--none{background:#d3dde3}
+.usmap{display:grid;grid-template-columns:repeat(11,1fr);grid-template-rows:repeat(8,1fr);gap:7px;max-width:720px;margin:0 auto}
+.mapwrap{position:relative}
+.tile{
+  grid-column:var(--c);grid-row:var(--r);aspect-ratio:1;display:grid;place-items:center;
+  border-radius:7px;font-size:12px;font-weight:700;
+  transition:transform .18s var(--ease),box-shadow .18s var(--ease),filter .18s var(--ease);
+}
+/* interactive affordances only exist once JS has upgraded the map */
+.js-map .tile{cursor:pointer}
+.js-map .tile:hover,.js-map .tile:focus-visible{transform:scale(1.15);box-shadow:var(--shadow-md);filter:saturate(1.2);z-index:2}
+.maptip{
+  position:absolute;z-index:5;pointer-events:none;opacity:0;
+  transform:translate(-50%,-126%);padding:9px 13px;border-radius:8px;
+  background:var(--navy-900);color:#fff;white-space:nowrap;
+  font-size:13.5px;line-height:1.4;box-shadow:var(--shadow-md);
+  transition:opacity .15s var(--ease);
+}
+.maptip.is-on{opacity:1}
+.maptip b{display:block;font-weight:600;font-size:14.5px}
+.maptip small{font-size:12.5px;color:var(--green)}
+.is-active{background:var(--green);color:var(--navy-900)}
+.is-dev{background:var(--navy-700);color:#fff}
+.is-none{background:#d3dde3;color:#6d7f8b}
+.section__head .statline{font-size:14.5px;line-height:1.7;color:var(--slate)}
+.section__head .statline b{color:var(--navy-800);font-weight:700}
+.section__head .statline span{display:block;font-size:13.5px;opacity:.85}
+.mapnote{text-align:center;font-size:13.5px;color:var(--slate);margin-top:26px}
+.mapnote b{color:var(--navy-800);font-weight:700}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:start}
+.contact__aside h2{font-size:clamp(29px,3.2vw,38px);color:#fff;margin-bottom:16px}
+.contact__aside p{font-size:17.5px;line-height:1.65;color:#bdd3de;margin-bottom:30px}
+.contact__list{list-style:none;padding:0;margin:0}
+.contact__list a,.contact__list span.row{display:flex;align-items:center;gap:14px;padding:12px 0;text-decoration:none;font-size:16.5px;font-weight:500;color:#fff;transition:color .18s var(--ease)}
+.contact__list a:hover{color:var(--green)}
+.contact__list svg{width:20px;height:20px;color:var(--green);flex:0 0 auto}
+.contact__list small{display:block;font-size:13px;font-weight:400;color:#8fa9b6;margin-top:2px}
+
+.form{background:#fff;border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-lg)}
+.form h2{font-size:21px;color:var(--navy-800);margin-bottom:6px}
+.form__note{font-size:14.5px;line-height:1.55;color:var(--slate);margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.field .req{color:#b4341f}
+.field input,.field select,.field textarea{
+  width:100%;min-height:50px;padding:13px 15px;border:1px solid var(--line);border-radius:var(--radius);
+  font:400 16px/1.4 Inter,sans-serif;color:var(--ink);background:#fff;
+  transition:border-color .18s var(--ease),box-shadow .18s var(--ease);
+}
+.field textarea{min-height:104px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy-700);box-shadow:0 0 0 3px rgba(10,78,105,.14)}
+.field__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form .btn{width:100%}
+.form__fine{font-size:12.5px;line-height:1.5;color:var(--slate);margin-top:15px;text-align:center}
+
+/* ---------- footer ---------- */
+.footer{background:var(--navy-900);color:#8fa9b6;padding:64px 0 0;border-top:1px solid rgba(255,255,255,.1)}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:44px;padding-bottom:44px}
+.footer__about p{font-size:15px;line-height:1.65;margin:18px 0 0;max-width:40ch}
+.footer .logo__mark{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:#bdd3de}
+.footer .logo__name{color:#fff}
+.footer h3{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.footer a{font-size:14.5px;text-decoration:none;color:#8fa9b6;transition:color .18s var(--ease)}
+.footer a:hover{color:var(--green)}
+.footer .social a{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:600;margin-top:4px}
+.footer .social a:hover{color:var(--green)}
+.footer .social svg{width:22px;height:22px;flex:0 0 auto;color:#fff;transition:color .18s var(--ease)}
+.footer .social a:hover svg{color:var(--green)}
+.footer__bottom{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13.5px}
+
+/* ---------- stub toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);z-index:200;
+  max-width:min(92vw,460px);display:flex;align-items:flex-start;gap:13px;padding:16px 20px;
+  border-radius:var(--radius);background:var(--navy-900);color:#fff;box-shadow:var(--shadow-lg);
+  font-size:14.5px;line-height:1.5;transition:transform .35s var(--ease),opacity .35s var(--ease);opacity:0;
+}
+.toast.is-on{transform:translate(-50%,0);opacity:1}
+.toast svg{width:20px;height:20px;color:var(--green);flex:0 0 auto;margin-top:1px}
+.toast b{display:block;font-weight:600;margin-bottom:2px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1040px){
+  .hero__inner{grid-template-columns:1fr;gap:44px;padding:76px 24px 68px}
+  .hero h1{font-size:clamp(34px,6vw,52px)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cards--deals{grid-template-columns:repeat(2,1fr)}
+  .howgrid{grid-template-columns:1fr;gap:38px}
+  .benefits{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr;gap:44px}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .footer__about{grid-column:1/-1}
+}
+@media (max-width:860px){
+  .burger{display:flex}
+  .nav{
+    position:fixed;inset:76px 0 0;margin:0;display:block;overflow-y:auto;background:#fff;
+    padding:12px 24px 44px;border-top:1px solid var(--line);
+    transform:translateX(100%);transition:transform .3s var(--ease);
+  }
+  .nav.is-open{transform:translateX(0)}
+  .nav a{width:100%;height:56px;padding:0;font-size:17px;border-radius:0;border-bottom:1px solid var(--line)}
+  .nav a:hover{background:transparent}
+  .nav .btn{margin:22px 0 0;height:auto;min-height:52px;justify-content:center;border-bottom:0}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .section{padding:68px 0}
+  .section__head{margin-bottom:36px}
+  .cards,.benefits,.field__row{grid-template-columns:1fr}
+  .hero__cta .btn{width:100%}
+  .form{padding:26px 22px}
+  .usmap{gap:4px}
+  .tile{font-size:9px;border-radius:4px}
+  .footer__grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .btn:hover,.card:hover{transform:none}
+}
+
+/* ---------- page 2 additions ---------- */
+.deal{scroll-margin-top:100px}
+.deals__lede{margin-top:12px;font-size:16px;line-height:1.6;color:var(--slate);max-width:60ch}
+.cards--deals{grid-template-columns:repeat(2,1fr)}
+.deal{display:flex;flex-direction:column}
+.deal{padding:0;overflow:hidden}
+.deal__media{margin:0;background:var(--mist)}
+.deal__media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
+.deal__body{padding:24px;display:flex;flex-direction:column;flex:1}
+.deal__logo{height:40px;width:auto;max-width:170px;object-fit:contain;margin-bottom:16px}
+
+.deal__top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:14px}
+.deal__amt{font-size:22px;font-weight:700;color:var(--navy-800);white-space:nowrap;letter-spacing:-.02em;text-align:right}
+.card__status{display:block;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--green-deep);margin-top:3px}
+.deal h4{font-size:20px;font-weight:700;color:var(--navy-800);letter-spacing:-.02em;margin:0}
+.deal__sub{margin-top:3px!important;font-size:14.5px!important;color:var(--slate)!important;font-style:normal!important}
+.deal__blurb{margin-top:12px!important;font-size:15.5px!important;line-height:1.6;color:var(--ink)!important;font-style:normal!important}
+.deal .dealfacts{margin-top:auto;padding-top:16px}
+.dealfacts div{align-items:flex-start}
+.dealfacts dd{text-align:right;max-width:60%}
+@media (max-width:900px){.cards--deals{grid-template-columns:1fr}.deal__amt{font-size:20px}}
+
+.dealfacts{margin:0}
+.dealfacts div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.dealfacts dt{color:var(--slate)}
+.dealfacts dd{margin:0;font-weight:600;color:var(--navy-800)}
+
+section[id]{scroll-margin-top:76px}
+.hero--page .hero__media::after{background:linear-gradient(103deg,rgba(1,32,46,.96) 0%,rgba(2,58,81,.92) 55%,rgba(10,78,105,.8) 100%)}
+.pagehead{padding:96px 24px 80px}
+.pagehead h1{font-size:clamp(34px,5vw,52px);color:#fff;font-weight:800;margin-bottom:20px}
+.pagehead h1 span{display:block;color:var(--green)}
+.pagehead .hero__lede{margin-bottom:30px}
+.jump{display:flex;flex-wrap:wrap;gap:10px}
+.jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid rgba(255,255,255,.4);border-radius:99px;color:#fff;font-size:15px;font-weight:500;text-decoration:none;transition:background .18s var(--ease),border-color .18s var(--ease),color .18s var(--ease)}
+.jump a:hover{background:var(--green);border-color:var(--green);color:var(--navy-900)}
+.card__best{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px!important;color:var(--navy-800)!important}
+.card__best b{display:block;font-size:11.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--green-deep);margin-bottom:4px}
+.fine{margin-top:34px;font-size:14.5px;line-height:1.6;color:var(--slate);max-width:70ch}
+.ticks{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line)}
+.ticks li{position:relative;padding:0 0 10px 26px;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.ticks li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;border-left:2px solid var(--green-deep);border-bottom:2px solid var(--green-deep);transform:rotate(-45deg)}
+.cards--four{grid-template-columns:repeat(4,1fr)}
+.elig h3{font-size:17px;margin-bottom:4px}
+.elig .ticks{margin-top:14px;padding-top:14px}
+.elig .ticks li{font-size:14.5px;padding-bottom:9px}
+@media (max-width:1040px){.cards--four{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cards--four{grid-template-columns:1fr}}
+.ptype{border-left:4px solid var(--green)}
+.cards--two{grid-template-columns:repeat(2,1fr)}
+.about{display:grid;grid-template-columns:.7fr 1.3fr;gap:64px;align-items:center}
+.portrait{margin:0}
+.portrait img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;background:#fff;border:4px solid rgba(255,255,255,.18);box-shadow:var(--shadow-lg)}
+.portrait figcaption{margin-top:18px;text-align:center;font-size:15px;font-weight:600;color:#fff}
+.portrait figcaption span{display:block;margin-top:3px;font-size:13px;font-weight:400;color:#8fa9b6}
+.about h2{font-size:clamp(29px,3.4vw,40px);color:#fff;margin-bottom:18px}
+.about h2 small{display:block;margin-top:8px;font-size:15px;font-weight:500;letter-spacing:.02em;color:#8fa9b6}
+.about__lede{font-size:18px;line-height:1.65;color:#cfe0e9;margin-bottom:14px;max-width:60ch}
+.about__tbd{font-size:15px;color:#8fa9b6;margin-bottom:34px}
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:38px;padding-top:30px;border-top:1px solid rgba(255,255,255,.14)}
+.principles h3{font-size:16.5px;font-weight:600;color:#fff;margin-bottom:6px}
+.principles p{font-size:14.5px;line-height:1.55;color:#a8c2ce}
+@media (max-width:1040px){
+  .about{grid-template-columns:1fr;gap:40px}
+  .portrait{max-width:300px}
+  .principles{grid-template-columns:1fr;gap:20px}
+}
+@media (max-width:640px){
+  .cards--two{grid-template-columns:1fr}
+  .pagehead{padding:68px 24px 60px}
+  section[id]{scroll-margin-top:76px}
+}
+</style>
+</head><body>
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="wrap header__bar">
+    <a aria-label='C-PACE Solutions, home' class='logo' href='/'>
+      <img src="images/logo.png" alt="C-PACE Solutions, LLC" style="height:64px;width:auto">
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href='/'>Home</a>
+      <a href="#transactions">Transactions</a>
+      <a href="#eligible">Eligible Items</a>
+      <a href="#property-types">Property Types</a>
+      <a href="#who-we-serve">Who We Serve</a>
+      <a href="#about">About</a>
+      <a class='btn btn--primary' href='/#contact'>Start a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= PAGE HEAD ================= -->
+<section class="hero hero--page">
+  <div class="hero__media" aria-hidden="true">
+    <img src="images/hero.jpg" alt="" width="2400" height="1345" fetchpriority="high">
+  </div>
+  <div class="wrap pagehead">
+    <span class="eyebrow eyebrow--light">Services</span>
+    <h1>What we finance.<span>Who we finance it for.</span></h1>
+    <p class="hero__lede">From ground-up builds to retroactive takeouts, C&#8209;PACE Solutions places each transaction with the right capital provider. Here is what we handle, on which assets, and for whom.</p>
+    <div class="jump">
+      <a href="#transactions">Transactions</a>
+      <a href="#property-types">Property Types</a>
+      <a href="#who-we-serve">Who We Serve</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRANSACTIONS ================= -->
+<section class="section" id="transactions">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow">Transactions</span>
+      <h2>Six ways C&#8209;PACE fits into a deal</h2>
+      <p>The structure changes with the project. The goal does not: the lowest-cost, longest-dated capital available for the eligible scope.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div>
+        <h3>New Construction</h3>
+        <p>Fund the energy, water and resiliency scope of a ground-up build. C&#8209;PACE takes a slot in the stack that would otherwise need equity, so the deal needs less cash to close.</p>
+        <p class="card__best"><b>Best when</b> The project is in design or early construction and the equity check is the constraint.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5.4 5.4l-5 5a2.1 2.1 0 003 3l5-5a4 4 0 005.4-5.4l-2.6 2.6-2.1-2.1 2.7-2.6z"/></svg></div>
+        <h3>Renovations &amp; Retrofits</h3>
+        <p>HVAC, building envelope, lighting, water systems, roofing, elevators and seismic work on an asset you already own.</p>
+        <p class="card__best"><b>Best when</b> Core building systems are aging out and the capital plan is stretched.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 019-7 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-7.5-4M3 4v6h6"/></svg></div>
+        <h3>Retroactive C&#8209;PACE</h3>
+        <p>Recover capital from eligible improvements already completed. Each program sets its own lookback window, so timing matters.</p>
+        <p class="card__best"><b>Best when</b> A recent project was funded with equity or short-term debt.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5s2.2 2.9 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg></div>
+        <h3>Recapitalization</h3>
+        <p>Replace short-term, floating or higher-cost debt with long-dated, fixed-rate capital. Restore debt service coverage and extend the runway.</p>
+        <p class="card__best"><b>Best when</b> A loan is maturing, or mezzanine or preferred equity is costing more than the asset can carry.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13"/><path d="M9.5 13.5l2 2 3.5-3.5"/></svg></div>
+        <h3>Building Repositioning</h3>
+        <p>Change what a building is. Office-to-residential conversion, tenant reconfiguration, or a full systems replacement that resets the asset for its next life.</p>
+        <p class="card__best"><b>Best when</b> A change of use or major scope makes the business plan depend on low-cost capital.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16h20M4 16v-5M20 16v-5M2 12c4.5 0 6-4 10-4s5.5 4 10 4M8.5 16v-3M15.5 16v-3"/></svg></div>
+        <h3>Bridge Financing</h3>
+        <p>Fill a timing gap in the stack while the project stabilizes or a permanent takeout comes together.</p>
+        <p class="card__best"><b>Best when</b> The takeout is lined up but the closing date is not.</p>
+      </article>
+    </div>
+
+    <div class="deals" id="featured-deals">
+      <div class="deals__head">
+        <span class="eyebrow">Track Record</span>
+        <h3>Deals We&rsquo;ve Originated</h3>
+        <p class="deals__lede">A selection of recent C&#8209;PACE transactions across industrial, hospitality, retail and office.</p>
+      </div>
+      <div class="cards cards--deals">
+        <article class="card deal" id="factory-at-franklin">
+          <figure class="deal__media"><img src="images/deals/factory-at-franklin.jpg" alt="The Factory at Franklin, Franklin, Tennessee" loading="lazy"></figure>
+          <div class="deal__body">
+            <img class="deal__logo" src="images/deals/factory-at-franklin-logo.jpg" alt="" loading="lazy">
+          <div class="deal__top">
+            <span class="card__tag">Retail &amp; Hospitality &middot; Retroactive + New Construction</span>
+            <span class="deal__amt">$44M</span>
+          </div>
+          <h4>The Factory at Franklin</h4>
+          <p class="deal__sub">Holladay Properties</p>
+          <p class="deal__blurb">Adaptive reuse of a historic 212,000 sq ft mixed-use industrial campus in Franklin, TN. The first of three tranches closed in March 2026. C&#8209;PACE let the sponsor pay down existing financing and free up capital for a future hotel phase.</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$44M total</dd></div><div><dt>Structure</dt><dd>$29M retroactive (retail) + $15M new construction (hotel)</dd></div><div><dt>Property type</dt><dd>Retail and new construction hotel</dd></div><div><dt>Scope funded</dt><dd>Building envelope, plumbing, electrical, mechanical</dd></div><div><dt>C&#8209;PACE LTV</dt><dd>25% retail / 25% hotel</dd></div></dl>
+          </div>
+        </article>
+        <article class="card deal" id="rise-partners">
+          <figure class="deal__media"><img src="images/deals/rise-partners.jpg" alt="North River Commerce Center industrial building" loading="lazy"></figure>
+          <div class="deal__body">
+            <img class="deal__logo" src="images/deals/rise-partners-logo.jpg" alt="" loading="lazy">
+          <div class="deal__top">
+            <span class="card__tag">Industrial &middot; Retroactive</span>
+            <span class="deal__amt">$14.3M</span>
+          </div>
+          <h4>Rise Partners</h4>
+          <p class="deal__sub">North River Commerce Center</p>
+          <p class="deal__blurb">A vertically integrated commercial real estate firm that has developed roughly $300 million of retail, industrial, build-to-rent and multifamily projects across ten states since 2018.</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$14.3M</dd></div><div><dt>Property type</dt><dd>Industrial, new construction</dd></div><div><dt>Scope funded</dt><dd>Retroactive proceeds funded TI and interest reserves with the first mortgage lender; the remainder paid down a portion of that lender&rsquo;s note</dd></div></dl>
+          </div>
+        </article>
+        <article class="card deal" id="cox-universal">
+          <figure class="deal__media"><img src="images/deals/cox-universal.jpg" alt="Echo Suites Extended Stay by Wyndham, Johnson City, Tennessee" loading="lazy"></figure>
+          <div class="deal__body">
+            <img class="deal__logo" src="images/deals/cox-universal-logo.jpg" alt="" loading="lazy">
+          <div class="deal__top">
+            <span class="card__tag">Hospitality &middot; Retroactive</span>
+            <span class="deal__amt">$4M</span>
+          </div>
+          <h4>Cox Universal Group</h4>
+          <p class="deal__sub">Echo Suites Extended Stay by Wyndham</p>
+          <p class="deal__blurb">Closed in October 2025 to refinance a portion of the construction loan and pull out equity to repay investor capital. The Johnson City, TN property completed construction in May 2025.</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$4M</dd></div><div><dt>Property type</dt><dd>4-story, 124-room extended-stay hotel, built 2025</dd></div><div><dt>Scope funded</dt><dd>Building envelope, HVAC, electrical, plumbing</dd></div><div><dt>C&#8209;PACE LTV</dt><dd>21%</dd></div></dl>
+          </div>
+        </article>
+        <article class="card deal" id="bernard-health">
+          <figure class="deal__media"><img src="images/deals/bernard-health.jpg" alt="Converted 1930s warehouse office building, Nashville" loading="lazy"></figure>
+          <div class="deal__body">
+            <img class="deal__logo" src="images/deals/bernard-health-logo.jpg" alt="" loading="lazy">
+          <div class="deal__top">
+            <span class="card__tag">Warehouse &amp; Office &middot; Retroactive</span>
+            <span class="deal__amt">$3.4M</span>
+          </div>
+          <h4>Bernard Health</h4>
+          <p class="deal__sub">Historic warehouse conversion, Nashville</p>
+          <p class="deal__blurb">A 1930s-vintage, two-story, 42,500 sq ft warehouse in Nashville converted into modern office space, giving the historic property new life through adaptive reuse. Financed through the Davidson County C&#8209;PACER program.</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$3.4M</dd></div><div><dt>Property type</dt><dd>Historic preservation, adaptive reuse</dd></div><div><dt>Scope funded</dt><dd>Building envelope, HVAC, electrical, plumbing, pervious pavement, resiliency</dd></div><div><dt>C&#8209;PACE LTV</dt><dd>19.5%</dd></div></dl>
+          </div>
+        </article>
+        <article class="card deal" id="salt-ranch">
+          <figure class="deal__media"><img src="images/deals/salt-ranch.jpg" alt="Illustration of the Salt Ranch hotel campus, East Nashville" loading="lazy"></figure>
+          <div class="deal__body">
+            <img class="deal__logo" src="images/deals/salt-ranch-logo.jpg" alt="" loading="lazy">
+          <div class="deal__top">
+            <span class="card__tag">Hospitality &middot; Retroactive</span>
+            <span class="deal__amt">$1.74M</span>
+          </div>
+          <h4>Salt Ranch</h4>
+          <p class="deal__sub">East Nashville</p>
+          <p class="deal__blurb">A 1950s motel on Dickerson Pike, rebuilt into 48 guest rooms with a historic barroom, a pool club with a 7,000 sq ft deck, library and event spaces on 2.5 acres. After opening in spring 2026, the ownership team used retroactive C&#8209;PACE to recapitalize the project.</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$1.74M</dd></div><div><dt>Property type</dt><dd>48-room boutique hotel</dd></div><div><dt>Scope funded</dt><dd>Building envelope, HVAC, electrical, plumbing, resiliency</dd></div><div><dt>C&#8209;PACE LTV</dt><dd>15%</dd></div></dl>
+          </div>
+        </article>
+        <article class="card deal" id="sylvan-park">
+          <figure class="deal__media"><img src="images/deals/sylvan-park.jpg" alt="Sylvan Park Boarding House, Nashville" loading="lazy"></figure>
+          <div class="deal__body">
+            <img class="deal__logo" src="images/deals/sylvan-park-logo.jpg" alt="" loading="lazy">
+          <div class="deal__top">
+            <span class="card__tag">Hospitality &middot; New Construction</span>
+            <span class="deal__amt">$1.6M</span>
+          </div>
+          <h4>Sylvan Park Boarding House</h4>
+          <p class="deal__sub">Nashville</p>
+          <p class="deal__blurb">A stately 1910 residence in Nashville&rsquo;s Sylvan Park neighborhood, a boarding house through the 1930s, rehabbed into an 8-room luxury boutique inn.</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$1.6M</dd></div><div><dt>Property type</dt><dd>2-story, 8-room boutique hotel with a live-in general manager and a separate restaurant space</dd></div><div><dt>Scope funded</dt><dd>Building envelope, HVAC, electrical, plumbing</dd></div><div><dt>C&#8209;PACE LTV</dt><dd>25%</dd></div></dl>
+          </div>
+        </article>
+        <article class="card deal" id="solid-rock">
+          <figure class="deal__media"><img src="images/deals/solid-rock.jpg" alt="Rendering of LivSmart Studios by Hilton, Knoxville" loading="lazy"></figure>
+          <div class="deal__body">
+          <div class="deal__top">
+            <span class="card__tag">Hospitality &middot; New Construction</span>
+            <span class="deal__amt">$3M<span class="card__status">In closing</span></span>
+          </div>
+          <h4>Solid Rock Hospitality</h4>
+          <p class="deal__sub">LivSmart Studios by Hilton, Knoxville</p>
+          <p class="deal__blurb">C&#8209;PACE completes the capital stack on a 104-room LivSmart Studios by Hilton development in Knoxville, TN, scheduled for completion in 2027. Senior debt is 65% LTC ($13M), C&#8209;PACE 15% LTC ($3M) and equity 20% LTC ($4M).</p>
+          <dl class="dealfacts"><div><dt>C&#8209;PACE funding</dt><dd>$3M</dd></div><div><dt>Property type</dt><dd>104-room LivSmart Studios by Hilton, completing 2027</dd></div><div><dt>Scope funded</dt><dd>Building envelope, HVAC, electrical, plumbing</dd></div><div><dt>C&#8209;PACE LTV</dt><dd>13%</dd></div></dl>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <p class="fine">Proceeds, pricing and term vary by state program, asset and scope of work. Eligibility is confirmed before anything is placed.</p>
+  </div>
+</section>
+
+<!-- ================= ELIGIBLE ITEMS ================= -->
+<section class="section section--mist" id="eligible">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow">Eligible Items</span>
+      <h2>What C&#8209;PACE can pay for</h2>
+      <p>Typical measures funded by C&#8209;PACE. The exact eligible list is set by each state program, so scope is confirmed before anything is placed.</p>
+    </div>
+    <div class="cards cards--four">
+      <article class="card elig">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3>Energy Efficiency</h3>
+        <ul class="ticks"><li>HVAC systems</li><li>Boilers &amp; chillers</li><li>Building automation &amp; control systems</li><li>LED lighting</li><li>Building envelope, including insulation, windows, doors &amp; roofing</li><li>Motors &amp; drives</li></ul>
+      </article>
+      <article class="card elig">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v2M12 19v2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M3 12h2M19 12h2M5.6 18.4L7 17M17 7l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg></div>
+        <h3>Renewable Energy</h3>
+        <ul class="ticks"><li>Solar and solar thermal</li><li>Fuel cells</li><li>Cogeneration</li><li>Geothermal</li><li>Wind</li></ul>
+      </article>
+      <article class="card elig">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.6 6 10.5a6 6 0 11-12 0C6 9.6 12 3 12 3z"/></svg></div>
+        <h3>Water Efficiency</h3>
+        <ul class="ticks"><li>Low-flow plumbing fixtures</li><li>Irrigation sensors and controls</li><li>Greywater and wastewater recovery</li><li>Water-efficient appliances (permanently affixed)</li><li>Rainwater harvesting</li></ul>
+      </article>
+      <article class="card elig">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/></svg></div>
+        <h3>Resiliency</h3>
+        <ul class="ticks"><li>Seismic</li><li>Wind-hardening</li><li>Microgrids</li><li>Storm water management systems</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROPERTY TYPES ================= -->
+<section class="section section--mist" id="property-types">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow">Property Types</span>
+      <h2>Commercial assets across the board</h2>
+      <p>C&#8209;PACE can fund projects across a wide variety of commercial property types. It follows the building, not the sector.</p>
+    </div>
+
+    <div class="cards cards--four">
+      <article class="card ptype">
+        <h3>Office</h3>
+        <p>Base-building retrofits, tenant reconfiguration, and conversions to residential or mixed use.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Industrial</h3>
+        <p>Roofing, lighting, refrigeration and building systems for warehouse, distribution and cold storage.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Mixed-Use</h3>
+        <p>Buildings combining retail, office and residential, where one assessment can cover shared systems.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Multifamily</h3>
+        <p>In-unit and central HVAC, water fixtures, envelope and common-area systems across garden, mid-rise and high-rise assets.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Hospitality</h3>
+        <p>Hotels carry heavy HVAC, hot water and lighting load. Systems upgrades and renovation scope often qualify.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Retail</h3>
+        <p>Shopping centers and street-level retail, from envelope and lighting to full systems replacement.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Healthcare</h3>
+        <p>Central plant, HVAC and resiliency systems for medical office, assisted living and senior housing.</p>
+      </article>
+      <article class="card ptype">
+        <h3>Nonprofit</h3>
+        <p>Tax-exempt owners can use C&#8209;PACE where tax credits and depreciation offer them nothing.</p>
+      </article>
+    </div>
+
+    <p class="fine">Not on the list? Ask. Eligibility is set by each state program, and other commercial property types may qualify.</p>
+  </div>
+</section>
+
+<!-- ================= WHO WE SERVE ================= -->
+<section class="section" id="who-we-serve">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow">Who We Serve</span>
+      <h2>Built for the people who run the deal</h2>
+      <p>Whether you own the building, build it, or arrange the capital around it, the work is the same: find the best execution and get it to closing.</p>
+    </div>
+
+    <div class="cards cards--two">
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+        <h3>Property Owners &amp; Operators</h3>
+        <p>You hold the asset and need capital for systems work, a refinance, or a recap. We shop your deal across the lender market and negotiate the terms.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V10l5-3v14M9 21V4l6 3v14M15 21v-9l5 2v7M2 21h20"/></svg></div>
+        <h3>Developers &amp; Sponsors</h3>
+        <p>You are building or converting and want to cut the equity in the stack. We place C&#8209;PACE alongside your construction and permanent financing.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 00-2 2v3M16 3h3a2 2 0 012 2v3M8 21H5a2 2 0 01-2-2v-3M16 21h3a2 2 0 002-2v-3M8 12h8M12 8v8"/></svg></div>
+        <h3>Brokers &amp; Capital Advisors</h3>
+        <p>You already have the client and the senior debt. We bring C&#8209;PACE as one more tool in the stack, and you keep the relationship.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Mortgage Lenders</h3>
+        <p>C&#8209;PACE needs senior lender consent. We coordinate it early and keep the process clear, so it supports your loan and does not stall the closing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section section--navy" id="about">
+  <div class="section__bg" aria-hidden="true"><img src="images/canopy.jpg" alt="" width="2400" height="1048" loading="lazy"></div>
+  <div class="wrap about">
+    <figure class="portrait">
+      <img src="images/nicole.jpg" alt="Nicole Robben, Principal of C-PACE Solutions" width="640" height="640">
+    </figure>
+
+    <div>
+      <span class="eyebrow eyebrow--light">About</span>
+      <h2>Nicole Robben<small>Principal, C&#8209;PACE Solutions, LLC</small></h2>
+      <p class="about__lede">C&#8209;PACE Solutions finds commercial property owners the best C&#8209;PACE lender at the best pricing for their specific deal, at no cost to them.</p>
+      <p class="about__tbd">Background, experience and track record: <em>bio coming soon.</em></p>
+
+      <div class="principles">
+        <div><h3>No cost to you</h3><p>Finding and negotiating your financing costs the property owner nothing.</p></div>
+        <div><h3>Full lender market</h3><p>We know the capital providers active in every program and shop your project across them.</p></div>
+        <div><h3>Shopped and negotiated</h3><p>You get the best execution available, not just the first term sheet.</p></div>
+      </div>
+
+      <div class="hero__cta">
+        <a class='btn btn--primary btn--lg' href='/#contact'>Start a Conversation</a>
+        <a class="btn btn--ghost btn--lg" href="mailto:nicole@c-pacesolutions.com">Email Nicole</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a aria-label='C-PACE Solutions, home' class='logo' href='/' style='background:#fff;padding:14px 18px;border-radius:var(--radius);display:inline-flex'>
+          <img src="images/logo.png" alt="C-PACE Solutions, LLC" style="height:56px;width:auto">
+        </a>
+        <p>Finding commercial property owners the best C&#8209;PACE lender at the best pricing for their deal, at no cost to them.</p>
+      </div>
+      <div>
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="#transactions">Transactions</a></li>
+          <li><a href="#property-types">Property Types</a></li>
+          <li><a href="#who-we-serve">Who We Serve</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:nicole@c-pacesolutions.com">nicole@c-pacesolutions.com</a></li>
+          <li><a href="tel:+14147081072">414.708.1072</a></li>
+          <li><a href='/#contact'>Start a conversation</a></li>
+                <li class="social"><a href="https://www.linkedin.com/in/nicole-robben/" target="_blank" rel="noopener" aria-label="Nicole Robben on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05a3.75 3.75 0 013.38-1.86c3.61 0 4.27 2.38 4.27 5.47v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg><span>Connect on LinkedIn</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="yr">2026</span> C&#8209;PACE Solutions, LLC. All rights reserved.</span>
+      <span>Financing is subject to program eligibility, underwriting and approval.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var header = document.getElementById('header');
+  var onScroll = function(){ header.classList.toggle('is-stuck', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  function closeNav(){
+    nav.classList.remove('is-open'); burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow = '';
+  }
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  nav.addEventListener('click', function(e){ if(e.target.closest('a')) closeNav(); });
+})();
+</script>
+
+</body></html>

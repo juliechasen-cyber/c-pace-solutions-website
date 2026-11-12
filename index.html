@@ -1,0 +1,1034 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>C-PACE Solutions</title>
+<meta name="description" content="C-PACE Solutions finds commercial property owners the best C-PACE lender at the best pricing for their specific deal — at no cost to them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   C-PACE Solutions — landing page
+   All type is Inter. Colors are tokens; change them here only.
+   ============================================================ */
+:root{
+  --navy-900:#01202e;
+  --navy-800:#023a51;
+  --navy-700:#0a4e69;
+  --green:#aedc3c;        /* bright accent — fills and buttons, not body text */
+  --green-hi:#c0ea52;
+  --green-deep:#557d19;   /* dark enough for text on white */
+  --green-soft:#f2f8e3;
+  --slate:#5a6a78;
+  --ink:#0d1b24;
+  --mist:#eef3f6;
+  --line:#dde5ea;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow-sm:0 1px 2px rgba(1,32,46,.06),0 2px 8px rgba(1,32,46,.05);
+  --shadow-md:0 4px 12px rgba(1,32,46,.08),0 12px 32px rgba(1,32,46,.08);
+  --shadow-lg:0 20px 60px rgba(1,32,46,.18);
+  --wrap:1140px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:#fff;color:var(--ink);
+  font:400 17px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-weight:700;line-height:1.18;letter-spacing:-.022em;margin:0}
+p{margin:0}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--green-deep);margin-bottom:14px;display:block;
+}
+.eyebrow--light{color:var(--green)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 26px;border:1px solid transparent;border-radius:var(--radius);
+  font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;
+  transition:background .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease),transform .2s var(--ease);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn--primary{background:var(--green);color:var(--navy-900);box-shadow:0 4px 14px rgba(174,220,60,.38)}
+.btn--primary:hover{background:var(--green-hi);box-shadow:0 8px 22px rgba(174,220,60,.5)}
+.btn--dark{background:var(--navy-800);color:#fff}
+.btn--dark:hover{background:var(--navy-700)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn--ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn--lg{min-height:56px;padding:0 32px;font-size:16px}
+
+/* ---------- header ---------- */
+.header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);transition:box-shadow .25s var(--ease)}
+.header.is-stuck{box-shadow:var(--shadow-sm)}
+.header__bar{display:flex;align-items:center;gap:24px;height:76px}
+
+/* LOGO PLACEHOLDER — see README */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
+.logo__mark{
+  width:52px;height:52px;flex:0 0 auto;display:grid;place-items:center;
+  border:2px dashed var(--line);border-radius:8px;background:var(--mist);
+  font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--slate);
+}
+.logo__text{display:flex;flex-direction:column;line-height:1.1}
+.logo__name{font-size:18px;font-weight:700;color:var(--navy-800);letter-spacing:-.018em}
+.logo__sub{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);margin-top:4px}
+
+.nav{margin-left:auto;display:flex;align-items:center;gap:2px}
+.nav a{
+  display:inline-flex;align-items:center;height:44px;padding:0 14px;border-radius:8px;
+  font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;
+  transition:background .18s var(--ease),color .18s var(--ease);
+}
+.nav a:hover{background:var(--mist);color:var(--navy-800)}
+.nav .btn{margin-left:12px;color:var(--navy-900)}
+.nav .btn:hover{background:var(--green-hi);color:var(--navy-900)}
+
+.burger{display:none;margin-left:auto;width:48px;height:48px;align-items:center;justify-content:center;background:none;border:1px solid var(--line);border-radius:9px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:var(--navy-800);position:relative;transition:.22s var(--ease)}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--navy-800);transition:.22s var(--ease)}
+.burger span::before{top:-6px}
+.burger span::after{top:6px}
+.burger.is-open span{background:transparent}
+.burger.is-open span::before{top:0;transform:rotate(45deg)}
+.burger.is-open span::after{top:0;transform:rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--navy-900);color:#fff;overflow:hidden;isolation:isolate}
+.hero__media{position:absolute;inset:0;z-index:-2}
+.hero__media img{width:100%;height:100%;object-fit:cover}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(103deg,rgba(1,32,46,.96) 0%,rgba(2,58,81,.92) 50%,rgba(10,78,105,.76) 100%)}
+.hero__inner{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding:104px 24px 92px}
+.hero h1{font-size:40px;color:#fff;margin-bottom:18px;font-weight:800}
+.hero h1 span{display:block;color:var(--green)}
+.hero__attrs{
+  display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:26px;
+  font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);
+}
+.hero__attrs span::after{content:"";display:inline-block;width:4px;height:4px;border-radius:50%;background:rgba(174,220,60,.6);margin-left:18px;vertical-align:middle}
+.hero__attrs span:last-child::after{display:none}
+.hero__lede{font-size:19px;line-height:1.62;color:#cfe0e9;max-width:54ch;margin-bottom:32px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+
+/* illustrative structure card */
+.card-illus{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.17);border-radius:var(--radius-lg);padding:28px;backdrop-filter:blur(10px);box-shadow:var(--shadow-lg)}
+.card-illus__head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.card-illus__head h2{font-size:18px;color:#fff}
+.card-illus__tag{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--navy-900);background:var(--green);padding:6px 10px;border-radius:99px;white-space:nowrap}
+.card-illus dl{margin:0}
+.card-illus dl div{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+.card-illus dl div:last-child{border-bottom:0}
+.card-illus dt{font-size:14.5px;font-weight:500;color:#a8c2ce;margin:0}
+.card-illus dd{font-size:16px;font-weight:700;color:#fff;margin:0;font-variant-numeric:tabular-nums}
+.card-illus__foot{margin-top:14px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;line-height:1.5;color:#8fa9b6}
+
+.card-illus--deal{display:block;text-decoration:none;color:inherit;transition:border-color .22s var(--ease),transform .22s var(--ease)}
+.card-illus--deal:hover{border-color:var(--green);transform:translateY(-3px)}
+.card-illus__img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin:18px 0 16px}
+.card-illus__name{font-size:21px;font-weight:700;color:#fff;letter-spacing:-.02em;margin:0}
+.card-illus__sub{margin:5px 0 4px!important;font-size:14px;color:#a8c2ce}
+.card-illus__cta{display:block;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:14.5px;font-weight:600;color:var(--green)}
+@media (prefers-reduced-motion:reduce){.card-illus--deal:hover{transform:none}}
+
+/* ---------- sections ---------- */
+.section{padding:96px 0}
+.section--mist{background:var(--mist)}
+.section--navy{background:var(--navy-900);color:#fff;position:relative;isolation:isolate}
+.section__bg{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.section__bg img{width:100%;height:100%;object-fit:cover}
+.section__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(1,32,46,.97) 0%,rgba(1,32,46,.93) 52%,rgba(2,58,81,.84) 100%)}
+.section__head{max-width:680px;margin-bottom:48px}
+.section__head--center{margin-left:auto;margin-right:auto;text-align:center}
+.section__head h2{font-size:clamp(29px,3.4vw,40px);margin-bottom:16px}
+.section--navy .section__head h2{color:#fff}
+.section__head p{font-size:18px;color:var(--slate);line-height:1.65}
+.section--navy .section__head p{color:#bdd3de}
+
+/* ---------- financing cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px;transition:border-color .22s var(--ease),box-shadow .22s var(--ease),transform .22s var(--ease)}
+.card:hover{border-color:var(--green);box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.card__icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:var(--green-soft);color:var(--green-deep);margin-bottom:18px}
+.card__icon svg{width:24px;height:24px}
+.card h3{font-size:19px;margin-bottom:10px;color:var(--navy-800)}
+.card p{font-size:15.5px;line-height:1.6;color:var(--slate)}
+
+/* asset-type chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:44px;padding-top:36px;border-top:1px solid var(--line);align-items:center}
+.chips__label{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-right:8px}
+.chip{padding:9px 16px;border:1px solid var(--line);border-radius:99px;background:#fff;font-size:14.5px;font-weight:500;color:var(--navy-800)}
+
+/* ---------- closed deals (placeholders) ---------- */
+.deals{margin-top:48px;padding-top:40px;border-top:1px solid var(--line)}
+.deals__head{margin-bottom:26px}
+.deals__head h3{font-size:22px;color:var(--navy-800)}
+.cards--deals{grid-template-columns:repeat(4,1fr)}
+.cards--deals .card{display:flex;flex-direction:column}
+.cards--deals .card__more{margin-top:auto;padding-top:14px}
+.card__status{display:block;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--green-deep);margin-top:2px}
+.card--placeholder{border-style:dashed;background:#fafbfc}
+.card--placeholder:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.card__tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--slate);background:var(--green-soft);padding:4px 10px;border-radius:99px;margin-bottom:14px}
+.card--placeholder p{color:var(--slate);font-style:italic}
+
+.deals__lede{margin-top:10px;font-size:16px;line-height:1.6;color:var(--slate);max-width:62ch}
+.deals__lede a{color:var(--green-deep);font-weight:600;text-decoration:none;white-space:nowrap}
+.deals__lede a:hover{text-decoration:underline}
+.cards--deals .card__tag{display:block}
+.cards--deals .deal__amt{display:block;font-size:26px;font-weight:700;color:var(--navy-800);letter-spacing:-.025em;margin-bottom:8px}
+.cards--deals h3{font-size:18px;margin-bottom:4px}
+.cards--deals .card__more{margin-top:14px}
+.card--link{display:block;text-decoration:none;color:inherit}
+.card--link:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--green)}
+.card__more{display:block;margin-top:16px;font-size:14.5px;font-weight:600;color:var(--green-deep)}
+
+/* ---------- how it works ---------- */
+.howgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.howfig{margin:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.howfig img{width:100%;height:auto}
+.howgrid .section__head{margin-bottom:30px}
+.steplist{list-style:none;counter-reset:step;padding:0;margin:0}
+.steplist li{position:relative;padding:0 0 24px 60px;counter-increment:step}
+.steplist li::before{
+  content:counter(step,decimal-leading-zero);position:absolute;left:0;top:-2px;
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  background:var(--green-soft);color:var(--green-deep);font-size:13px;font-weight:700;
+}
+.steplist li::after{content:"";position:absolute;left:21px;top:46px;bottom:4px;width:1px;background:var(--line)}
+.steplist li:last-child{padding-bottom:0}
+.steplist li:last-child::after{display:none}
+.steplist h3{font-size:18.5px;margin-bottom:7px;color:var(--navy-800)}
+.steplist p{font-size:15.5px;line-height:1.6;color:var(--slate)}
+
+/* ---------- benefits ---------- */
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 40px}
+.benefit svg{width:22px;height:22px;color:var(--green);margin-bottom:12px}
+.benefit h3{font-size:16.5px;font-weight:600;color:#fff;margin-bottom:6px;letter-spacing:-.01em}
+.benefit p{font-size:14.5px;line-height:1.55;color:#a8c2ce}
+
+/* ---------- static state map ---------- */
+.maplegend{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;margin-bottom:30px}
+.maplegend span{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;color:var(--slate)}
+.sw{width:15px;height:15px;border-radius:4px;flex:0 0 auto}
+.sw--active{background:var(--green)}
+.sw--dev{background:var(--navy-700)}
+.sw--none{background:#d3dde3}
+.usmap{display:grid;grid-template-columns:repeat(11,1fr);grid-template-rows:repeat(8,1fr);gap:7px;max-width:720px;margin:0 auto}
+.mapwrap{position:relative}
+.tile{
+  grid-column:var(--c);grid-row:var(--r);aspect-ratio:1;display:grid;place-items:center;
+  border-radius:7px;font-size:12px;font-weight:700;
+  transition:transform .18s var(--ease),box-shadow .18s var(--ease),filter .18s var(--ease);
+}
+/* interactive affordances only exist once JS has upgraded the map */
+.js-map .tile{cursor:pointer}
+.js-map .tile:hover,.js-map .tile:focus-visible{transform:scale(1.15);box-shadow:var(--shadow-md);filter:saturate(1.2);z-index:2}
+.maptip{
+  position:absolute;z-index:5;pointer-events:none;opacity:0;
+  transform:translate(-50%,-126%);padding:9px 13px;border-radius:8px;
+  background:var(--navy-900);color:#fff;white-space:nowrap;
+  font-size:13.5px;line-height:1.4;box-shadow:var(--shadow-md);
+  transition:opacity .15s var(--ease);
+}
+.maptip.is-on{opacity:1}
+.maptip b{display:block;font-weight:600;font-size:14.5px}
+.maptip small{font-size:12.5px;color:var(--green)}
+.is-active{background:var(--green);color:var(--navy-900)}
+.is-dev{background:var(--navy-700);color:#fff}
+.is-none{background:#d3dde3;color:#6d7f8b}
+.section__head .statline{font-size:14.5px;line-height:1.7;color:var(--slate)}
+.section__head .statline b{color:var(--navy-800);font-weight:700}
+.section__head .statline span{display:block;font-size:13.5px;opacity:.85}
+.mapnote{text-align:center;font-size:13.5px;color:var(--slate);margin-top:26px}
+.mapnote b{color:var(--navy-800);font-weight:700}
+
+/* ---------- interactive capital stack ---------- */
+.stack{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm)}
+.stack__controls{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:26px;align-items:end;padding-bottom:30px;margin-bottom:32px;border-bottom:1px solid var(--line)}
+.ctrl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:baseline}
+.ctrl label{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+.ctrl output{font-size:19px;font-weight:700;color:var(--navy-800);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.ctrl input{grid-column:1/-1;width:100%;margin:0;height:28px;background:none;cursor:pointer;-webkit-appearance:none;appearance:none}
+.ctrl input::-webkit-slider-runnable-track{height:6px;border-radius:99px;background:var(--mist);border:1px solid var(--line)}
+.ctrl input::-moz-range-track{height:6px;border-radius:99px;background:var(--mist);border:1px solid var(--line)}
+.ctrl input::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;margin-top:-10px;border-radius:50%;background:var(--navy-800);border:3px solid #fff;box-shadow:var(--shadow-sm);cursor:grab}
+.ctrl input::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--navy-800);border:3px solid #fff;box-shadow:var(--shadow-sm);cursor:grab}
+.ctrl input:focus-visible{outline:none}
+.ctrl input:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(174,220,60,.55)}
+.ctrl input:focus-visible::-moz-range-thumb{box-shadow:0 0 0 4px rgba(174,220,60,.55)}
+.stack__reset{min-height:44px;padding:0 18px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;font:600 14px Inter,sans-serif;color:var(--navy-800);cursor:pointer;transition:background .18s var(--ease),border-color .18s var(--ease)}
+.stack__reset:hover{background:var(--mist);border-color:var(--navy-700)}
+
+.stack__charts{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.col{margin:0}
+.col figcaption{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:14px;text-align:center}
+.col--hl figcaption{color:var(--green-deep)}
+.bar{height:360px;display:flex;flex-direction:column;border-radius:12px;overflow:hidden;background:var(--mist);border:1px solid var(--line)}
+.seg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff;text-align:center;padding:4px 10px;overflow:hidden;min-height:0;transition:height .45s var(--ease)}
+.seg b{font-size:17px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.seg span{font-size:12.5px;font-weight:500;opacity:.88;line-height:1.2}
+.seg--eq{background:#4f87a1}
+.seg--sr{background:var(--navy-800)}
+.seg--cp{background:var(--green);color:var(--navy-900)}
+.seg--cp span{opacity:1;color:#2f4a0a}
+.seg.is-tiny b{font-size:13px}
+.seg.is-tiny span{display:none}
+.key{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.key li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--slate)}
+.key i{width:13px;height:13px;border-radius:4px;flex:0 0 auto}
+.key b{margin-left:auto;color:var(--navy-800);font-variant-numeric:tabular-nums}
+.stack__take{margin-top:30px;padding:18px 22px;border-radius:var(--radius);background:var(--green-soft);border:1px solid #dcebb8;font-size:16px;line-height:1.6;color:var(--navy-900)}
+.stack__take b{font-weight:700}
+.stack__fine{margin-top:20px;font-size:13.5px;line-height:1.6;color:var(--slate);text-align:center}
+@media (max-width:860px){
+  .stack{padding:24px 20px}
+  .stack__controls{grid-template-columns:1fr 1fr;gap:22px}
+  .stack__reset{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .stack__controls{grid-template-columns:1fr}
+  .stack__charts{gap:18px}
+  .bar{height:300px}
+  .seg b{font-size:15px}
+  .seg span{font-size:11.5px}
+  .key li{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){.seg{transition:none}}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:start}
+.contact__aside h2{font-size:clamp(29px,3.2vw,38px);color:#fff;margin-bottom:16px}
+.contact__aside p{font-size:17.5px;line-height:1.65;color:#bdd3de;margin-bottom:30px}
+.contact__list{list-style:none;padding:0;margin:0}
+.contact__list a,.contact__list span.row{display:flex;align-items:center;gap:14px;padding:12px 0;text-decoration:none;font-size:16.5px;font-weight:500;color:#fff;transition:color .18s var(--ease)}
+.contact__list a:hover{color:var(--green)}
+.contact__list svg{width:20px;height:20px;color:var(--green);flex:0 0 auto}
+.contact__list small{display:block;font-size:13px;font-weight:400;color:#8fa9b6;margin-top:2px}
+
+.form{background:#fff;border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow-lg)}
+.form h2{font-size:21px;color:var(--navy-800);margin-bottom:6px}
+.form__note{font-size:14.5px;line-height:1.55;color:var(--slate);margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.field .req{color:#b4341f}
+.field input,.field select,.field textarea{
+  width:100%;min-height:50px;padding:13px 15px;border:1px solid var(--line);border-radius:var(--radius);
+  font:400 16px/1.4 Inter,sans-serif;color:var(--ink);background:#fff;
+  transition:border-color .18s var(--ease),box-shadow .18s var(--ease);
+}
+.field textarea{min-height:104px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--navy-700);box-shadow:0 0 0 3px rgba(10,78,105,.14)}
+.field__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form .btn{width:100%}
+.form__fine{font-size:12.5px;line-height:1.5;color:var(--slate);margin-top:15px;text-align:center}
+
+/* ---------- footer ---------- */
+.footer{background:var(--navy-900);color:#8fa9b6;padding:64px 0 0;border-top:1px solid rgba(255,255,255,.1)}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:44px;padding-bottom:44px}
+.footer__about p{font-size:15px;line-height:1.65;margin:18px 0 0;max-width:40ch}
+.footer .logo__mark{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06);color:#bdd3de}
+.footer .logo__name{color:#fff}
+.footer h3{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.footer a{font-size:14.5px;text-decoration:none;color:#8fa9b6;transition:color .18s var(--ease)}
+.footer a:hover{color:var(--green)}
+.footer .social a{display:inline-flex;align-items:center;gap:10px;color:#fff;font-weight:600;margin-top:4px}
+.footer .social a:hover{color:var(--green)}
+.footer .social svg{width:22px;height:22px;flex:0 0 auto;color:#fff;transition:color .18s var(--ease)}
+.footer .social a:hover svg{color:var(--green)}
+.footer__bottom{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);font-size:13.5px}
+
+/* ---------- stub toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,120%);z-index:200;
+  max-width:min(92vw,460px);display:flex;align-items:flex-start;gap:13px;padding:16px 20px;
+  border-radius:var(--radius);background:var(--navy-900);color:#fff;box-shadow:var(--shadow-lg);
+  font-size:14.5px;line-height:1.5;transition:transform .35s var(--ease),opacity .35s var(--ease);opacity:0;
+}
+.toast.is-on{transform:translate(-50%,0);opacity:1}
+.toast svg{width:20px;height:20px;color:var(--green);flex:0 0 auto;margin-top:1px}
+.toast b{display:block;font-weight:600;margin-bottom:2px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1040px){
+  .hero__inner{grid-template-columns:1fr;gap:44px;padding:76px 24px 68px}
+  .hero h1{font-size:clamp(34px,6vw,52px)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cards--deals{grid-template-columns:repeat(2,1fr)}
+  .howgrid{grid-template-columns:1fr;gap:38px}
+  .benefits{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr;gap:44px}
+  .footer__grid{grid-template-columns:1fr 1fr}
+  .footer__about{grid-column:1/-1}
+}
+@media (max-width:860px){
+  .burger{display:flex}
+  .nav{
+    position:fixed;inset:76px 0 0;margin:0;display:block;overflow-y:auto;background:#fff;
+    padding:12px 24px 44px;border-top:1px solid var(--line);
+    transform:translateX(100%);transition:transform .3s var(--ease);
+  }
+  .nav.is-open{transform:translateX(0)}
+  .nav a{width:100%;height:56px;padding:0;font-size:17px;border-radius:0;border-bottom:1px solid var(--line)}
+  .nav a:hover{background:transparent}
+  .nav .btn{margin:22px 0 0;height:auto;min-height:52px;justify-content:center;border-bottom:0}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .section{padding:68px 0}
+  .section__head{margin-bottom:36px}
+  .cards,.benefits,.field__row{grid-template-columns:1fr}
+  .hero__cta .btn{width:100%}
+  .form{padding:26px 22px}
+  .usmap{gap:4px}
+  .tile{font-size:9px;border-radius:4px}
+  .footer__grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .btn:hover,.card:hover,.card--link:hover{transform:none}
+}
+</style>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="header">
+  <div class="wrap header__bar">
+
+    <a class="logo" href="#top" aria-label="C-PACE Solutions, home">
+      <img src="images/logo.png" alt="C-PACE Solutions, LLC" style="height:64px;width:auto">
+    </a>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href='/services#transactions'>Transactions</a>
+      <a href='/services#property-types'>Property Types</a>
+      <a href='/services#who-we-serve'>Who We Serve</a>
+      <a href='/services#about'>About</a>
+      <a class="btn btn--primary" href="#contact">Start a Conversation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__media" aria-hidden="true">
+    <img src="images/hero.jpg" alt="" width="2400" height="1345" fetchpriority="high">
+  </div>
+
+  <div class="wrap hero__inner">
+    <div>
+      <h1>Compare C&#8209;PACE Lenders.<span>Find Your Best Deal.</span></h1>
+      <div class="hero__attrs">
+        <span>No cost to you</span><span>Full lender market</span><span>Your deal, shopped and negotiated</span>
+      </div>
+      <p class="hero__lede">
+        C&#8209;PACE Solutions finds commercial property owners the best Commercial
+        Property Assessed Clean Energy (C&#8209;PACE) lender at the best pricing for
+        their specific deal, at no cost to them. We know the capital providers
+        active in every program, shop your project across that market, and negotiate
+        the structure, so you get the best execution available, not just the first
+        term sheet.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--primary btn--lg" href="#contact">Start a Conversation</a>
+        <a class="btn btn--ghost btn--lg" href="#how">How It Works</a>
+      </div>
+    </div>
+
+    <a class='card-illus card-illus--deal' href='/services#factory-at-franklin'>
+      <div class="card-illus__head">
+        <h2>Featured transaction</h2>
+        <span class="card-illus__tag">$44M</span>
+      </div>
+      <img class="card-illus__img" src="images/deals/factory-at-franklin.jpg" alt="The Factory at Franklin, a historic mixed-use campus in Franklin, Tennessee" width="1100" height="617" fetchpriority="high">
+      <h3 class="card-illus__name">The Factory at Franklin</h3>
+      <p class="card-illus__sub">Holladay Properties &middot; Franklin, TN</p>
+      <dl>
+        <div><dt>C&#8209;PACE funding</dt><dd>$44,000,000</dd></div>
+        <div><dt>Retroactive, retail</dt><dd>$29,000,000</dd></div>
+        <div><dt>New construction, hotel</dt><dd>$15,000,000</dd></div>
+        <div><dt>C&#8209;PACE LTV</dt><dd>25% / 25%</dd></div>
+      </dl>
+      <span class="card-illus__cta">View transaction &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= WHAT WE FINANCE ================= -->
+<section class="section" id="financing">
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow">What Is C&#8209;PACE</span>
+      <h2>Long-term, non-recourse capital for your property</h2>
+      <p>Commercial PACE financing funds eligible energy efficiency, water conservation, resiliency and building-envelope improvements, repaid through a voluntary assessment on the property. It is fixed-rate, non-recourse, and underwritten to the asset, not a personal guarantee. Here's where it fits:</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div>
+        <h3>New Construction</h3>
+        <p>Fund the energy, water and resiliency scope of a ground-up build and reduce the equity the deal needs to pencil.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 01-5.4 5.4l-5 5a2.1 2.1 0 003 3l5-5a4 4 0 005.4-5.4l-2.6 2.6-2.1-2.1 2.7-2.6z"/></svg></div>
+        <h3>Renovations &amp; Retrofits</h3>
+        <p>HVAC, envelope, lighting, water systems, roofing, elevators and seismic work on an asset you already own.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10a9 9 0 019-7 9 9 0 019 9 9 9 0 01-9 9 9 9 0 01-7.5-4M3 4v6h6"/></svg></div>
+        <h3>Retroactive C&#8209;PACE</h3>
+        <p>Pull capital back out of eligible improvements already paid for, subject to each program's lookback window.</p>
+      </article>
+
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5s2.2 2.9 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3"/></svg></div>
+        <h3>Recapitalization</h3>
+        <p>Replace short-term, floating or higher-cost debt with long-dated fixed-rate capital and restore coverage.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13"/><path d="M9.5 13.5l2 2 3.5-3.5"/></svg></div>
+        <h3>Building Repositioning</h3>
+        <p>Change what a building is. Office-to-residential conversion, tenant reconfiguration, or a full systems replacement.</p>
+      </article>
+      <article class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16h20M4 16v-5M20 16v-5M2 12c4.5 0 6-4 10-4s5.5 4 10 4M8.5 16v-3M15.5 16v-3"/></svg></div>
+        <h3>Bridge Financing</h3>
+        <p>Fill a timing gap in the stack while the project stabilizes or a permanent takeout comes together.</p>
+      </article>
+    </div>
+
+    <div class="chips">
+      <span class="chips__label">Property types</span>
+      <span class="chip">Office</span>
+      <span class="chip">Industrial</span>
+      <span class="chip">Mixed-Use</span>
+      <span class="chip">Multifamily</span>
+      <span class="chip">Hospitality</span>
+      <span class="chip">Retail</span>
+      <span class="chip">Healthcare</span>
+      <span class="chip">Nonprofit</span>
+    </div>
+
+    <div class="deals">
+      <div class="deals__head">
+        <span class="eyebrow">Track Record</span>
+        <h3>Deals We&rsquo;ve Originated</h3>
+        <p class="deals__lede">Recent C&#8209;PACE transactions across industrial, hospitality, retail and office. <a href='/services#featured-deals'>See all seven &rarr;</a></p>
+      </div>
+      <div class="cards cards--deals">
+        <a class='card card--link' href='/services#factory-at-franklin'>
+          <span class="card__tag">Retail &amp; Hospitality &middot; Retroactive + New Construction</span>
+          <span class="deal__amt">$44M</span>
+          <h3>The Factory at Franklin</h3>
+          <p>Holladay Properties</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+        <a class='card card--link' href='/services#rise-partners'>
+          <span class="card__tag">Industrial &middot; Retroactive</span>
+          <span class="deal__amt">$14.3M</span>
+          <h3>Rise Partners</h3>
+          <p>North River Commerce Center</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+        <a class='card card--link' href='/services#cox-universal'>
+          <span class="card__tag">Hospitality &middot; Retroactive</span>
+          <span class="deal__amt">$4M</span>
+          <h3>Cox Universal Group</h3>
+          <p>Echo Suites Extended Stay by Wyndham</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+        <a class='card card--link' href='/services#bernard-health'>
+          <span class="card__tag">Warehouse &amp; Office &middot; Retroactive</span>
+          <span class="deal__amt">$3.4M</span>
+          <h3>Bernard Health</h3>
+          <p>Historic warehouse conversion, Nashville</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+        <a class='card card--link' href='/services#solid-rock'>
+          <span class="card__tag">Hospitality &middot; New Construction</span>
+          <span class="deal__amt">$3M<span class="card__status">In closing</span></span>
+          <h3>Solid Rock Hospitality</h3>
+          <p>LivSmart Studios by Hilton, Knoxville</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+        <a class='card card--link' href='/services#salt-ranch'>
+          <span class="card__tag">Hospitality &middot; Retroactive</span>
+          <span class="deal__amt">$1.74M</span>
+          <h3>Salt Ranch</h3>
+          <p>East Nashville</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+        <a class='card card--link' href='/services#sylvan-park'>
+          <span class="card__tag">Hospitality &middot; New Construction</span>
+          <span class="deal__amt">$1.6M</span>
+          <h3>Sylvan Park Boarding House</h3>
+          <p>Nashville</p>
+          <span class="card__more">View transaction &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section section--mist" id="how">
+  <div class="wrap">
+    <div class="howgrid">
+      <figure class="howfig">
+        <img src="images/process.jpg" alt="Engineers reviewing an architectural model and plans on site" width="1000" height="1085" loading="lazy">
+      </figure>
+
+      <div>
+        <div class="section__head">
+          <span class="eyebrow">The Process</span>
+          <h2>How a C&#8209;PACE assessment comes together</h2>
+        </div>
+
+        <ol class="steplist">
+          <li><h3>Eligibility review</h3><p>We confirm the property sits in an active program district and identify which improvements in your scope qualify.</p></li>
+          <li><h3>Structure &amp; place</h3><p>We size the assessment, take it to the capital providers most active in that program, and coordinate mortgage lender consent.</p></li>
+          <li><h3>Program approval</h3><p>The application goes to the program administrator, documents are executed, and the assessment is recorded.</p></li>
+          <li><h3>Fund &amp; repay</h3><p>Capital funds at closing or through construction draws. Repayment arrives as a line item on the property tax bill.</p></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY C-PACE ================= -->
+<section class="section section--navy" id="why">
+  <div class="section__bg" aria-hidden="true"><img src="images/canopy.jpg" alt="" width="2400" height="1048" loading="lazy"></div>
+  <div class="wrap">
+    <div class="section__head">
+      <span class="eyebrow eyebrow--light">Why C&#8209;PACE</span>
+      <h2>Capital structured around your property</h2>
+      <p>C&#8209;PACE sits in its own place in the capital stack, and that changes what a deal can carry.</p>
+    </div>
+
+    <div class="benefits">
+      <div class="benefit"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><h3>100% financing</h3><p>The eligible scope is funded in full, with no out-of-pocket contribution at closing.</p></div>
+      <div class="benefit"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><h3>Fixed for up to 30 years</h3><p>Long amortization holds annual payments low and keeps them out of the rate cycle.</p></div>
+      <div class="benefit"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><h3>Non-recourse</h3><p>The assessment runs with the property. No personal guarantee, no corporate guarantee.</p></div>
+      <div class="benefit"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><h3>Transfers on sale</h3><p>The obligation conveys with the asset, so you only pay for the years you hold it.</p></div>
+      <div class="benefit"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><h3>Displaces costlier capital</h3><p>Steps into the slot mezzanine or preferred equity would hold, at a materially lower cost.</p></div>
+      <div class="benefit"><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 111.4-1.4l3.8 3.8 6.8-6.8a1 1 0 011.4 0z" clip-rule="evenodd"/></svg><h3>Lifts NOI and value</h3><p>Lower utility spend and modernized systems show up directly in net operating income.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPITAL STACK ================= -->
+<section class="section section--mist" id="stack">
+  <div class="wrap">
+    <div class="section__head section__head--center">
+      <span class="eyebrow">The Capital Stack</span>
+      <h2>How C&#8209;PACE reshapes a deal</h2>
+      <p>C&#8209;PACE takes a slice of the stack that senior debt or expensive mezzanine would otherwise carry. Move the controls to see what that does to a project of any size.</p>
+    </div>
+
+    <div class="stack">
+      <div class="stack__controls">
+        <div class="ctrl">
+          <label for="sv">Total project value</label>
+          <output id="sv-out">$100M</output>
+          <input id="sv" type="range" min="5" max="250" step="5" value="100" aria-describedby="sv-out">
+        </div>
+        <div class="ctrl">
+          <label for="se">Equity</label>
+          <output id="se-out">35%</output>
+          <input id="se" type="range" min="10" max="50" step="1" value="35" aria-describedby="se-out">
+        </div>
+        <div class="ctrl">
+          <label for="sc">C&#8209;PACE</label>
+          <output id="sc-out">25% LTV</output>
+          <input id="sc" type="range" min="0" max="40" step="1" value="25" aria-describedby="sc-out">
+        </div>
+        <button class="stack__reset" id="sreset" type="button">Reset</button>
+      </div>
+
+      <div class="stack__charts">
+        <figure class="col">
+          <figcaption>Without C&#8209;PACE</figcaption>
+          <div class="bar" id="bar-a" role="img" aria-label="Capital stack without C-PACE"></div>
+          <ul class="key" id="key-a"></ul>
+        </figure>
+
+        <figure class="col col--hl">
+          <figcaption>With C&#8209;PACE</figcaption>
+          <div class="bar" id="bar-b" role="img" aria-label="Capital stack with C-PACE"></div>
+          <ul class="key" id="key-b"></ul>
+        </figure>
+      </div>
+
+      <p class="stack__take" id="stake"></p>
+    </div>
+
+    <p class="stack__fine">Illustrative only. Actual proceeds, pricing and advance rates vary by state program, asset and scope of work.</p>
+  </div>
+</section>
+
+<!-- ================= PARTICIPATING STATES ================= -->
+<section class="section" id="states">
+  <div class="wrap">
+    <div class="section__head section__head--center">
+      <span class="eyebrow">Coverage</span>
+      <h2>Active States</h2>
+      <p class="statline"><b>Enabling Legislation Passed:</b> 40 states + D.C.</p>
+      <p class="statline"><b>Active/Operating Programs:</b> ~36 states + D.C.
+        <span>Availability still depends heavily on local county or municipal opt-in.</span></p>
+    </div>
+
+    <div class="maplegend" role="list">
+      <span role="listitem"><i class="sw sw--active"></i>Active program</span>
+      <span role="listitem"><i class="sw sw--dev"></i>In development</span>
+      <span role="listitem"><i class="sw sw--none"></i>Not active</span>
+    </div>
+
+    <div class="mapwrap">
+    <div class="usmap" id="usmap" role="img" aria-label="Map of United States C-PACE program status by state">
+      <div class="tile is-active" style="--r:1;--c:1" data-name="Alaska" data-status="Active program" aria-label="Alaska: Active program" role="img">AK</div>
+      <div class="tile is-active" style="--r:1;--c:11" data-name="Maine" data-status="Active program" aria-label="Maine: Active program" role="img">ME</div>
+      <div class="tile is-active" style="--r:2;--c:7" data-name="Wisconsin" data-status="Active program" aria-label="Wisconsin: Active program" role="img">WI</div>
+      <div class="tile is-dev" style="--r:2;--c:9" data-name="Vermont" data-status="In development" aria-label="Vermont: In development" role="img">VT</div>
+      <div class="tile is-none" style="--r:2;--c:10" data-name="New Hampshire" data-status="Not active" aria-label="New Hampshire: Not active" role="img">NH</div>
+      <div class="tile is-active" style="--r:3;--c:1" data-name="Washington" data-status="Active program" aria-label="Washington: Active program" role="img">WA</div>
+      <div class="tile is-active" style="--r:3;--c:2" data-name="Idaho" data-status="Active program" aria-label="Idaho: Active program" role="img">ID</div>
+      <div class="tile is-active" style="--r:3;--c:3" data-name="Montana" data-status="Active program" aria-label="Montana: Active program" role="img">MT</div>
+      <div class="tile is-none" style="--r:3;--c:4" data-name="North Dakota" data-status="Not active" aria-label="North Dakota: Not active" role="img">ND</div>
+      <div class="tile is-active" style="--r:3;--c:5" data-name="Minnesota" data-status="Active program" aria-label="Minnesota: Active program" role="img">MN</div>
+      <div class="tile is-active" style="--r:3;--c:6" data-name="Illinois" data-status="Active program" aria-label="Illinois: Active program" role="img">IL</div>
+      <div class="tile is-active" style="--r:3;--c:7" data-name="Michigan" data-status="Active program" aria-label="Michigan: Active program" role="img">MI</div>
+      <div class="tile is-active" style="--r:3;--c:9" data-name="New York" data-status="Active program" aria-label="New York: Active program" role="img">NY</div>
+      <div class="tile is-active" style="--r:3;--c:10" data-name="Massachusetts" data-status="Active program" aria-label="Massachusetts: Active program" role="img">MA</div>
+      <div class="tile is-active" style="--r:3;--c:11" data-name="Rhode Island" data-status="Active program" aria-label="Rhode Island: Active program" role="img">RI</div>
+      <div class="tile is-active" style="--r:4;--c:1" data-name="Oregon" data-status="Active program" aria-label="Oregon: Active program" role="img">OR</div>
+      <div class="tile is-active" style="--r:4;--c:2" data-name="Nevada" data-status="Active program" aria-label="Nevada: Active program" role="img">NV</div>
+      <div class="tile is-none" style="--r:4;--c:3" data-name="Wyoming" data-status="Not active" aria-label="Wyoming: Not active" role="img">WY</div>
+      <div class="tile is-none" style="--r:4;--c:4" data-name="South Dakota" data-status="Not active" aria-label="South Dakota: Not active" role="img">SD</div>
+      <div class="tile is-none" style="--r:4;--c:5" data-name="Iowa" data-status="Not active" aria-label="Iowa: Not active" role="img">IA</div>
+      <div class="tile is-none" style="--r:4;--c:6" data-name="Indiana" data-status="Not active" aria-label="Indiana: Not active" role="img">IN</div>
+      <div class="tile is-active" style="--r:4;--c:7" data-name="Ohio" data-status="Active program" aria-label="Ohio: Active program" role="img">OH</div>
+      <div class="tile is-active" style="--r:4;--c:8" data-name="Pennsylvania" data-status="Active program" aria-label="Pennsylvania: Active program" role="img">PA</div>
+      <div class="tile is-active" style="--r:4;--c:9" data-name="New Jersey" data-status="Active program" aria-label="New Jersey: Active program" role="img">NJ</div>
+      <div class="tile is-active" style="--r:4;--c:10" data-name="Connecticut" data-status="Active program" aria-label="Connecticut: Active program" role="img">CT</div>
+      <div class="tile is-active" style="--r:5;--c:1" data-name="California" data-status="Active program" aria-label="California: Active program" role="img">CA</div>
+      <div class="tile is-active" style="--r:5;--c:2" data-name="Utah" data-status="Active program" aria-label="Utah: Active program" role="img">UT</div>
+      <div class="tile is-active" style="--r:5;--c:3" data-name="Colorado" data-status="Active program" aria-label="Colorado: Active program" role="img">CO</div>
+      <div class="tile is-active" style="--r:5;--c:4" data-name="Nebraska" data-status="Active program" aria-label="Nebraska: Active program" role="img">NE</div>
+      <div class="tile is-active" style="--r:5;--c:5" data-name="Missouri" data-status="Active program" aria-label="Missouri: Active program" role="img">MO</div>
+      <div class="tile is-active" style="--r:5;--c:6" data-name="Kentucky" data-status="Active program" aria-label="Kentucky: Active program" role="img">KY</div>
+      <div class="tile is-none" style="--r:5;--c:7" data-name="West Virginia" data-status="Not active" aria-label="West Virginia: Not active" role="img">WV</div>
+      <div class="tile is-active" style="--r:5;--c:8" data-name="Virginia" data-status="Active program" aria-label="Virginia: Active program" role="img">VA</div>
+      <div class="tile is-active" style="--r:5;--c:9" data-name="Maryland" data-status="Active program" aria-label="Maryland: Active program" role="img">MD</div>
+      <div class="tile is-active" style="--r:5;--c:10" data-name="Delaware" data-status="Active program" aria-label="Delaware: Active program" role="img">DE</div>
+      <div class="tile is-none" style="--r:6;--c:2" data-name="Arizona" data-status="Not active" aria-label="Arizona: Not active" role="img">AZ</div>
+      <div class="tile is-active" style="--r:6;--c:3" data-name="New Mexico" data-status="Active program" aria-label="New Mexico: Active program" role="img">NM</div>
+      <div class="tile is-none" style="--r:6;--c:4" data-name="Kansas" data-status="Not active" aria-label="Kansas: Not active" role="img">KS</div>
+      <div class="tile is-active" style="--r:6;--c:5" data-name="Arkansas" data-status="Active program" aria-label="Arkansas: Active program" role="img">AR</div>
+      <div class="tile is-active" style="--r:6;--c:6" data-name="Tennessee" data-status="Active program" aria-label="Tennessee: Active program" role="img">TN</div>
+      <div class="tile is-active" style="--r:6;--c:7" data-name="North Carolina" data-status="Active program" aria-label="North Carolina: Active program" role="img">NC</div>
+      <div class="tile is-dev" style="--r:6;--c:8" data-name="South Carolina" data-status="In development" aria-label="South Carolina: In development" role="img">SC</div>
+      <div class="tile is-active" style="--r:6;--c:9" data-name="District of Columbia" data-status="Active program" aria-label="District of Columbia: Active program" role="img">DC</div>
+      <div class="tile is-active" style="--r:7;--c:4" data-name="Oklahoma" data-status="Active program" aria-label="Oklahoma: Active program" role="img">OK</div>
+      <div class="tile is-none" style="--r:7;--c:5" data-name="Louisiana" data-status="Not active" aria-label="Louisiana: Not active" role="img">LA</div>
+      <div class="tile is-none" style="--r:7;--c:6" data-name="Mississippi" data-status="Not active" aria-label="Mississippi: Not active" role="img">MS</div>
+      <div class="tile is-dev" style="--r:7;--c:7" data-name="Alabama" data-status="In development" aria-label="Alabama: In development" role="img">AL</div>
+      <div class="tile is-active" style="--r:7;--c:8" data-name="Georgia" data-status="Active program (Atlanta only)" aria-label="Georgia: Active program (Atlanta only)" role="img">GA</div>
+      <div class="tile is-active" style="--r:8;--c:1" data-name="Hawaii" data-status="Active program" aria-label="Hawaii: Active program" role="img">HI</div>
+      <div class="tile is-active" style="--r:8;--c:4" data-name="Texas" data-status="Active program" aria-label="Texas: Active program" role="img">TX</div>
+      <div class="tile is-active" style="--r:8;--c:9" data-name="Florida" data-status="Active program" aria-label="Florida: Active program" role="img">FL</div>
+    </div>
+    <div class="maptip" id="maptip" aria-hidden="true"></div>
+    </div>
+
+    <p class="mapnote">Hover or tap a state for its current status. Not sure about yours? <a href="#contact" style="color:var(--green-deep);font-weight:600;display:inline-block;padding:12px 4px">Just ask</a>.</p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section section--navy" id="contact">
+  <div class="wrap contact">
+    <div class="contact__aside">
+      <span class="eyebrow eyebrow--light">Get Started</span>
+      <h2>Let's see if your project qualifies</h2>
+      <p>Send the address and a rough scope of work. You'll get a straight answer on eligibility and an indicative structure, at no cost and with no obligation.</p>
+
+      <ul class="contact__list">
+        <li><span class="row">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a6 6 0 00-6 6c0 4.2 5.2 9.5 5.4 9.7a.8.8 0 001.2 0C10.8 17.5 16 12.2 16 8a6 6 0 00-6-6zm0 8.2A2.2 2.2 0 1110 5.8a2.2 2.2 0 010 4.4z" clip-rule="evenodd"/></svg>
+          <span>Nicole Robben<small>Principal</small></span>
+        </span></li>
+        <li><a href="mailto:nicole@c-pacesolutions.com">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.5 5.5A2.5 2.5 0 015 3h10a2.5 2.5 0 012.5 2.5v9A2.5 2.5 0 0115 17H5a2.5 2.5 0 01-2.5-2.5v-9zm2.2-.4l5.3 4.2 5.3-4.2A1 1 0 0015 4.7H5a1 1 0 00-.3.4z"/></svg>
+          <span>nicole@c-pacesolutions.com<small>Email</small></span>
+        </a></li>
+        <li><a href="tel:+14147081072">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M2.5 4.5A2 2 0 014.5 2.5h1.6a1 1 0 011 .8l.8 3.4a1 1 0 01-.5 1.1l-1.4.8a11 11 0 004.9 4.9l.8-1.4a1 1 0 011.1-.5l3.4.8a1 1 0 01.8 1v1.6a2 2 0 01-2 2A14.5 14.5 0 012.5 4.5z"/></svg>
+          <span>414.708.1072<small>Direct</small></span>
+        </a></li>
+      </ul>
+    </div>
+
+    <form action='/thank-you' class='form' id='lead-form' method='POST' name='contact'>
+      <input type="hidden" name="form-name" value="contact" />
+      <h2>Start a conversation</h2>
+      <p class="form__note">Fields marked <span class="req">*</span> are required. Typical response within one business day.</p>
+
+      <div class="field__row">
+        <div class="field">
+          <label for="f-name">Full name <span class="req">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="f-company">Company</label>
+          <input id="f-company" name="company" type="text" autocomplete="organization">
+        </div>
+      </div>
+
+      <div class="field__row">
+        <div class="field">
+          <label for="f-email">Email <span class="req">*</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="f-type">What are you financing?</label>
+        <select id="f-type" name="project_type">
+          <option value="">Select one</option>
+          <option>New construction</option>
+          <option>Renovation or retrofit</option>
+          <option>Building repositioning</option>
+          <option>Retroactive C-PACE</option>
+          <option>Recapitalization</option>
+          <option>Bridge financing</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-address">Property address</label>
+        <input id="f-address" name="address" type="text" autocomplete="street-address" placeholder="Street, city, state">
+      </div>
+
+      <div class="field">
+        <label for="f-msg">Project description</label>
+        <textarea id="f-msg" name="message" placeholder="Asset type, approximate project cost, and the improvements you have planned."></textarea>
+      </div>
+
+      <button class="btn btn--dark btn--lg" type="submit">Send Message</button>
+      <p class="form__fine">Your information is used only to evaluate your project. We never sell contact data.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__about">
+        <a class="logo" href="#top" aria-label="C-PACE Solutions, home" style="background:#fff;padding:14px 18px;border-radius:var(--radius);display:inline-flex">
+          <img src="images/logo.png" alt="C-PACE Solutions, LLC" style="height:56px;width:auto">
+        </a>
+        <p>Finding commercial property owners the best C&#8209;PACE lender at the best pricing for their deal, at no cost to them.</p>
+      </div>
+
+      <div>
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href='/services#transactions'>Transactions</a></li>
+          <li><a href='/services#property-types'>Property Types</a></li>
+          <li><a href='/services#who-we-serve'>Who We Serve</a></li>
+          <li><a href='/services#about'>About</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:nicole@c-pacesolutions.com">nicole@c-pacesolutions.com</a></li>
+          <li><a href="tel:+14147081072">414.708.1072</a></li>
+          <li><a href="#contact">Start a conversation</a></li>
+                <li class="social"><a href="https://www.linkedin.com/in/nicole-robben/" target="_blank" rel="noopener" aria-label="Nicole Robben on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05a3.75 3.75 0 013.38-1.86c3.61 0 4.27 2.38 4.27 5.47v6.28zM5.34 7.43a2.07 2.07 0 110-4.14 2.07 2.07 0 010 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg><span>Connect on LinkedIn</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="yr">2026</span> C&#8209;PACE Solutions, LLC. All rights reserved.</span>
+      <span>Financing is subject to program eligibility, underwriting and approval.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+  <span><b>Part of the full site build</b>This preview is the home page. The page you clicked is mapped out and ready to build next.</span>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var header = document.getElementById('header');
+  var onScroll = function(){ header.classList.toggle('is-stuck', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* mobile menu */
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    burger.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  /* close the mobile menu after any link tap (in-page anchors stay on this page) */
+  nav.addEventListener('click', function(e){
+    if(!e.target.closest('a')) return;
+    nav.classList.remove('is-open'); burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded','false'); burger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow = '';
+  });
+
+  /* placeholder pages -> toast */
+  var toast = document.getElementById('toast');
+  var timer;
+  document.addEventListener('click', function(e){
+    var stub = e.target.closest('[data-stub]');
+    if(!stub) return;
+    e.preventDefault();
+    toast.classList.add('is-on');
+    clearTimeout(timer);
+    timer = setTimeout(function(){ toast.classList.remove('is-on'); }, 4200);
+  });
+
+
+  /* ---------- interactive state map ----------
+     The 51 tiles are already in the HTML, so the map still renders (colored,
+     legended, screen-reader labelled) with JS off. This only layers hover,
+     focus and tap behavior on top. */
+  var map = document.getElementById('usmap');
+  var tip = document.getElementById('maptip');
+
+  if(map && tip){
+    map.classList.add('js-map');
+
+    var tiles = map.querySelectorAll('.tile');
+    for(var i=0;i<tiles.length;i++){
+      tiles[i].tabIndex = 0;
+      tiles[i].removeAttribute('title');   /* our tooltip replaces the native one */
+    }
+
+    var show = function(tile){
+      var box = tile.getBoundingClientRect();
+      var frame = tile.closest('.mapwrap').getBoundingClientRect();
+      tip.innerHTML = '<b>' + tile.dataset.name + '</b><small>' + tile.dataset.status + '</small>';
+      tip.style.left = (box.left - frame.left + box.width / 2) + 'px';
+      tip.style.top  = (box.top  - frame.top) + 'px';
+      tip.classList.add('is-on');
+    };
+    var hide = function(){ tip.classList.remove('is-on'); };
+
+    map.addEventListener('mouseover', function(e){
+      var t = e.target.closest('.tile'); if(t) show(t);
+    });
+    map.addEventListener('mouseleave', hide);
+    map.addEventListener('focusin', function(e){
+      var t = e.target.closest('.tile'); if(t) show(t);
+    });
+    map.addEventListener('focusout', hide);
+    map.addEventListener('click', function(e){
+      var t = e.target.closest('.tile'); if(t) show(t);   /* tap on touch devices */
+    });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
+    window.addEventListener('scroll', hide, {passive:true});
+    window.addEventListener('resize', hide, {passive:true});
+  }
+
+})();
+</script>
+
+<script>
+/* ---------- interactive capital stack ---------- */
+(function(){
+  "use strict";
+  var sv=document.getElementById('sv'), se=document.getElementById('se'), sc=document.getElementById('sc');
+  if(!sv) return;
+  var svo=document.getElementById('sv-out'), seo=document.getElementById('se-out'), sco=document.getElementById('sc-out');
+  var barA=document.getElementById('bar-a'), barB=document.getElementById('bar-b');
+  var keyA=document.getElementById('key-a'), keyB=document.getElementById('key-b');
+  var take=document.getElementById('stake'), reset=document.getElementById('sreset');
+  var DEF={sv:100,se:35,sc:25};
+
+  function money(m){            /* m = millions; exact, so segments always sum to the total */
+    if(m <= 0) return '$0';
+    if(m < 1) return '$' + (Math.round(m*10000)/10) + 'K';
+    return '$' + (Math.round(m*100)/100) + 'M';
+  }
+  function seg(cls,label,pct,total){
+    if(pct <= 0) return '';
+    var tiny = pct < 12 ? ' is-tiny' : '';
+    return '<div class="seg '+cls+tiny+'" style="height:'+pct+'%" data-k="'+cls+'" data-v="'+(total*pct/100)+'" title="'+label+' '+pct+'%">'+
+           '<b>'+money(total*pct/100)+'</b><span>'+label+' '+pct+'%</span></div>';
+  }
+  function row(cls,label,pct,total){
+    if(pct <= 0) return '';
+    return '<li><i class="'+cls+'"></i>'+label+' <b>'+money(total*pct/100)+' &middot; '+pct+'%</b></li>';
+  }
+
+  function draw(){
+    var total=+sv.value, eq=+se.value, cp=+sc.value;
+    var maxCp=Math.max(0,100-eq-5);          /* always leave some senior debt */
+    if(cp>maxCp){ cp=maxCp; sc.value=cp; }
+    sc.max=maxCp;
+    var srA=100-eq, srB=100-eq-cp;
+
+    svo.textContent=money(total);
+    seo.textContent=eq+'%';
+    sco.textContent=cp+'% LTV';
+
+    barA.innerHTML=seg('seg--sr','Senior mortgage',srA,total)+seg('seg--eq','Equity',eq,total);
+    barB.innerHTML=seg('seg--cp','C‑PACE',cp,total)+seg('seg--sr','Senior mortgage',srB,total)+seg('seg--eq','Equity',eq,total);
+    barA.setAttribute('aria-label','Without C-PACE: senior mortgage '+srA+' percent, equity '+eq+' percent of '+money(total));
+    barB.setAttribute('aria-label','With C-PACE: C-PACE '+cp+' percent, senior mortgage '+srB+' percent, equity '+eq+' percent of '+money(total));
+
+    keyA.innerHTML=row('seg--sr','Senior mortgage',srA,total)+row('seg--eq','Equity',eq,total);
+    keyB.innerHTML=row('seg--cp','C‑PACE',cp,total)+row('seg--sr','Senior mortgage',srB,total)+row('seg--eq','Equity',eq,total);
+
+    var cut=total*(srA-srB)/100;
+    take.innerHTML = cp>0
+      ? 'On a '+money(total)+' project, C‑PACE at '+cp+'% LTV takes <b>'+money(total*cp/100)+
+        '</b> of the stack. Senior exposure falls from <b>'+money(total*srA/100)+' ('+srA+'% LTV)</b> to <b>'+
+        money(total*srB/100)+' ('+srB+'% LTV)</b>, a reduction of <b>'+money(cut)+'</b>, with the equity check unchanged.'
+      : 'With no C‑PACE, the senior lender carries the full <b>'+money(total*srA/100)+' ('+srA+'% LTV)</b>. Raise the C‑PACE slider to see that exposure come down.';
+  }
+
+  [sv,se,sc].forEach(function(el){ el.addEventListener('input',draw); });
+  reset.addEventListener('click',function(){ sv.value=DEF.sv; se.value=DEF.se; sc.max=40; sc.value=DEF.sc; draw(); });
+  draw();
+})();
+</script>
+
+</body></html>
